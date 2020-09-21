@@ -4,8 +4,9 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
 ![Screenshot](https://raw.githubusercontent.com/JeffersonLab/icalibrate/master/doc/Screenshot.png)
 
 ---
- - [Build](https://github.com/slominskir/icalibrate)
- - [Run](https://github.com/slominskir/icalibrate)
+ - [Build](https://github.com/JeffersonLab/icalibrate#build)
+ - [Configure](https://github.com/JeffersonLab/icalibrate#configure)
+ - [Run](https://github.com/JeffersonLab/icalibrate#run)
 ---
 
 ## Build
