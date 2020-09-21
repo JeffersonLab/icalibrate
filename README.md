@@ -8,7 +8,7 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
 
 ## Build
 ```
-git clone https://github.com/slominskir/icalibrate.git
+git clone https://github.com/JeffersonLab/icalibrate.git
 cd icalibrate
 gradlew build
 ```
