@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+    
+    maven {
+        url  "https://dl.bintray.com/slominskir/maven"
+    }
+}
+
+dependencies {
+    implementation 'org.glassfish:javax.json:1.1.4'
+    implementation 'org.jfree:jfreechart:1.0.19'
+    implementation 'org.epics:jca:2.4.5'
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'org.jlab:jlog:3.3.1'
+
+    testImplementation 'junit:junit:4.12'
+}
+
+application {
+    mainClassName = 'org.jlab.icalibrate.ICalibrateApp'
+}
+
+run {
+    classpath += files('config')
+}

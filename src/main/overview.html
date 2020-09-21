@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iCalibrate API Overview</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <p>The iCalibrate application is for operators at JLab, and assists in ion chamber calibration.</p>
+        <div>
+            <h2>Usage</h2>
+            <p>
+                The iCalibrate application is distributed as an executable jar file.
+                The iCalibrate application requires Java 8 or greater and can be launched on Linux with the following command:
+            </p>
+            <pre><kbd>
+./icalibrate.sh                
+            </kbd></pre>  
+            Or to have debugging logged to the console:
+            <pre><kbd>
+./debug-icalibrate.sh                
+            </kbd></pre>
+            Or to invoke Java manually (without the bash shell's Java version check):
+            <pre><kbd>
+java -jar icalibrate.jar                
+            </kbd></pre>
+            <p>
+                The versioning is organized into "major.minor" where major 
+                versions indicate API changes and minor versions are for bug 
+                fixes and implementation changes.
+            </p>
+
+            <h2>Configuration</h2>
+            <p>
+                A Java properties file named icalibrate.properties is located in the config directory.
+                Users can set various configuration parameters there.  
+                There is also an epics.properties file which instructs iCalibrate how to connect to EPICS.
+            </p>      
+            <h2>Source Code</h2>
+            <p>The Java iCalibrate application is named <em>icalibrate</em> 
+                and is stored in the git repository on devl00.  It can be
+                accessed by members of the JLab accelerator group <em>epics</em> 
+                from an accelerator Linux machine with the command:</p>
+            <pre><kbd>
+git clone ssh://devl00/usr/devsite/git/icalibrate.git 
+            </kbd></pre>
+            <p>
+                An Apache Ant build file (build.xml) is used to compile and
+                package the application.
+            </p>   
+        </div>        
+    </body>
+</html>
