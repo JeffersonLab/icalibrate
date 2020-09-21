@@ -3,6 +3,14 @@ plugins {
     id 'application'
 }
 
+description = "Ion chamber calibration application"
+group 'org.jlab'
+version = '2.0.0'
+
+ext {
+    releaseDate = 'Sep 21 2020'
+}
+
 repositories {
     jcenter()
     
@@ -27,4 +35,15 @@ application {
 
 run {
     classpath += files('config')
+}
+
+processResources {
+    filesMatching('release.properties') {
+        filter {
+            String line -> line.replaceAll("@VERSION@", version)
+        }
+        filter {
+            String line -> line.replaceAll("@RELEASE_DATE@", releaseDate)
+        }
+    }
 }

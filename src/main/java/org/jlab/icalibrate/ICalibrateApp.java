@@ -35,6 +35,8 @@ public class ICalibrateApp {
      */
     public static final Properties APP_PROPERTIES = new Properties();
 
+    public static final Properties RELEASE_PROPERTIES = new Properties();
+
     /**
      * Create a new ICalibrateApp.
      *
@@ -112,15 +114,26 @@ public class ICalibrateApp {
             current = Integer.parseInt(args[1]);
         }
 
-        try (InputStream propStream
-                = ICalibrateApp.class.getClassLoader().getResourceAsStream(
-                        "icalibrate.properties")) {
+        try (
+                InputStream propStream = ICalibrateApp.class.getClassLoader().getResourceAsStream(
+                        "icalibrate.properties");
+                InputStream releaseStream = ICalibrateApp.class.getClassLoader().getResourceAsStream(
+                        "release.properties")
+            ) {
+
             if (propStream == null) {
                 throw new InitializationException(
                         "File Not Found; Configuration File: icalibrate.properties");
             }
 
+            if (releaseStream == null) {
+                throw new InitializationException(
+                        "File Not Found; Configuration File: release.properties");
+            }
+
             APP_PROPERTIES.load(propStream);
+
+            RELEASE_PROPERTIES.load(releaseStream);
 
             new ICalibrateApp(file, current);
 

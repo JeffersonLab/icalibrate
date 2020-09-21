@@ -60,7 +60,7 @@ public final class HelpDialog extends javax.swing.JDialog {
 
         jLabel1.setText("Version:");
 
-        clientVersion.setText("1.10.2");
+        clientVersion.setText(ICalibrateApp.RELEASE_PROPERTIES.getProperty("VERSION"));
 
         jLabel3.setText("Contact:");
 
@@ -82,7 +82,7 @@ public final class HelpDialog extends javax.swing.JDialog {
 
         jLabel6.setText("Release Date:");
 
-        jLabel7.setText("February 17 2020");
+        jLabel7.setText(ICalibrateApp.RELEASE_PROPERTIES.getProperty("RELEASE_DATE"));
         jLabel7.setToolTipText("");
 
         javax.swing.GroupLayout helpPanelLayout = new javax.swing.GroupLayout(helpPanel);
