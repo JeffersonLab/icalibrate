@@ -15,6 +15,15 @@ cd icalibrate
 gradlew build
 ```
 
+## Configure
+```
+config/icalibrate.properties
+```
+| Property | Desription | Default |
+|---|---|---|
+| NAMES_FROM_CED | Whether Ion Chamber Names should be queryed from the CED | true |
+| WRITE_ALLOWED | Whether the application can write to EPICS, else calibrations are dry-run simulations | true |
+| LOGBOOK_CSV | Comma separated values of Jefferson Lab logbook names to write log entries to; set to TLOG for testing | ELOG |
 ## Run
 ```
 gradlew run
