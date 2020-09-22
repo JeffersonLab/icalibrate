@@ -8,7 +8,7 @@ group 'org.jlab'
 version = '2.0.0'
 
 ext {
-    releaseDate = 'Sep 21 2020'
+    releaseDate = 'Sep 22 2020'
 }
 
 repositories {
