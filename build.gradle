@@ -40,6 +40,16 @@ run {
     classpath += files('config')
 }
 
+distributions {
+    main {
+        contents {
+            into('config') {
+                from 'config'
+            }
+        }
+    }
+}
+
 processResources {
     filesMatching('release.properties') {
         filter {
