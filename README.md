@@ -29,6 +29,7 @@ config/icalibrate.properties
 | DEFAULT_HCD_FILE_DIR | Default location for file chooser when opening and savings dataset files | /usr/opsuser/mccops/IonChambers |
 
 Each of Hall _A_, _C_, and _D_ have one of these properties (Hall A shown):
+
 | Property |Description |
 |---|---|
 | HALLA_CURRENT_READ_PV | PV to determine current |
@@ -49,3 +50,7 @@ Each of Hall _A_, _C_, and _D_ have one of these properties (Hall A shown):
 ```
 gradlew run
 ```
+
+**Note:** The _distTar_ Gradle target will build a tar file that can be distributed and includes scripts to launch the application.
+
+**Note:** To enable debug logging you can configure the JVM to use the logging properties file: _-Djava.util.logging.config.file=config/debug-logging.properties_
