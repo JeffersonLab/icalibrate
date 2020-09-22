@@ -36,6 +36,18 @@ application {
     applicationDefaultJvmArgs = ['-DCAJ_STRIP_HOSTNAME=CAJ_STRIP_HOSTNAME']
 }
 
+startScripts {
+    classpath += files('config')
+
+    // https://discuss.gradle.org/t/classpath-in-application-plugin-is-building-always-relative-to-app-home-lib-directory/2012
+    doLast {
+        def windowsScriptFile = file getWindowsScript()
+        def unixScriptFile = file getUnixScript()
+        windowsScriptFile.text = windowsScriptFile.text.replace('%APP_HOME%\\lib\\config', '%APP_HOME%\\config')
+        unixScriptFile.text = unixScriptFile.text.replace('$APP_HOME/lib/config', '$APP_HOME/config')
+    }
+}
+
 run {
     classpath += files('config')
 }
