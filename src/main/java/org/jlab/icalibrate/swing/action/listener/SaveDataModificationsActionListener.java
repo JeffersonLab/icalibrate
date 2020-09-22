@@ -22,7 +22,7 @@ public final class SaveDataModificationsActionListener implements ActionListener
     /**
      * Create a new OpenHCDActionListener.
      *
-     * @param dialog
+     * @param dialog The ModifySampleDataFrame
      * @param frame The ICalibrateFrame
      */
     public SaveDataModificationsActionListener(ModifySampleDataDialog dialog, ICalibrateFrame frame) {

@@ -1388,7 +1388,9 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
     }
 
     /**
-     * Sets the persisted state to true
+     * Sets the persisted state
+     *
+     * @param persisted true or false
      */
     public void setStateSaved(boolean persisted) {
         this.persisted = persisted;
