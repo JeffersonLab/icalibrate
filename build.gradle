@@ -12,6 +12,11 @@ ext {
     releaseDate = 'Sep 22 2020'
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
 repositories {
     jcenter()
     
