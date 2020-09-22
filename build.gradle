@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'distribution'
 }
 
 description = "Ion chamber calibration application"
@@ -32,6 +33,7 @@ dependencies {
 
 application {
     mainClassName = 'org.jlab.icalibrate.ICalibrateApp'
+    applicationDefaultJvmArgs = ['-DCAJ_STRIP_HOSTNAME=CAJ_STRIP_HOSTNAME']
 }
 
 run {
