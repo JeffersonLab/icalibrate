@@ -50,4 +50,23 @@ public class IOUtil {
         
         return streamToString(con.getInputStream(), "UTF-8");
     }
+
+    /**
+     * Escape XML characters.  This method aids with preparing a string to be inserted safely into HTML for example.
+     *
+     * @param input The unescaped string
+     * @return The escaped string
+     */
+    public static String escapeXml(String input) {
+        String output = input;
+
+        if (input != null) {
+            output = output.replace("&", "&#038;"); // Must do this one first as & within other replacements
+            output = output.replace("\"", "&#034;");
+            output = output.replace("'", "&#039;");
+            output = output.replace("<", "&#060;");
+            output = output.replace(">", "&#062;");
+        }
+        return output;
+    }
 }

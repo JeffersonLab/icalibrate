@@ -205,6 +205,14 @@ public class ChooseAndModifySetpointDialog extends javax.swing.JDialog {
         modifySetpointTableModel.setRows(copied);
     }
 
+    public LinkedHashSet<ModifySetpointTableModel.ModifySetpointRow> getData() {
+        LinkedHashSet<ModifySetpointTableModel.ModifySetpointRow> rows = null;
+
+        rows = modifySetpointTableModel.getRows();
+
+        return rows;
+    }
+
     /**
      * Get the selected and modified setpoints.
      *

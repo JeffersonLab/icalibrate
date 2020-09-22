@@ -17,6 +17,7 @@ import org.jfree.chart.JFreeChart;
 import org.jlab.elog.Body;
 import org.jlab.elog.LogEntry;
 import org.jlab.icalibrate.ICalibrateApp;
+import org.jlab.icalibrate.IOUtil;
 import org.jlab.icalibrate.model.ChartDataset;
 import org.jlab.icalibrate.model.DoseRateMeasurement;
 import org.jlab.icalibrate.model.HallCalibrationDataset;
@@ -69,14 +70,14 @@ public final class ExportElogActionListener implements ActionListener {
                 String body = "<h3 style=\"color: gold; background-color: purple;\">Calibration Parameters</h3>"
                         + "<table>"
                         + "<tbody>"
-                        + "<tr><th>Hall:</th><td>" + escapeXml(ds.getHall().name()) + "</td></tr>"
-                        + "<tr><th>Target:</th><td>" + escapeXml(ds.getTarget()) + "</td></tr>"
-                        + "<tr><th>Pass:</th><td>" + escapeXml(ds.getPass()) + "</td></tr>"
-                        + "<tr><th>Note:</th><td>" + escapeXml(ds.getNote()) + "</td></tr>"
-                        + "<tr><th>Calibrated On:</th><td>" + escapeXml(formatter.format(ds.getCalibratedDate())) + "</td></tr>"
-                        + "<tr><th>Calibrated By:</th><td>" + escapeXml(ds.getCalibratedBy()) + "</td></tr>"
-                        + "<tr><th>File:</th><td>" + escapeXml(frame.getFilename()) + "</td></tr>"
-                        + "<tr><th>Setpoint Current:</th><td>" + currentFormatter.format(frame.getCurrent()) + " " + escapeXml(frame.getCurrentUnits()) + "</td></tr>"
+                        + "<tr><th>Hall:</th><td>" + IOUtil.escapeXml(ds.getHall().name()) + "</td></tr>"
+                        + "<tr><th>Target:</th><td>" + IOUtil.escapeXml(ds.getTarget()) + "</td></tr>"
+                        + "<tr><th>Pass:</th><td>" + IOUtil.escapeXml(ds.getPass()) + "</td></tr>"
+                        + "<tr><th>Note:</th><td>" + IOUtil.escapeXml(ds.getNote()) + "</td></tr>"
+                        + "<tr><th>Calibrated On:</th><td>" + IOUtil.escapeXml(formatter.format(ds.getCalibratedDate())) + "</td></tr>"
+                        + "<tr><th>Calibrated By:</th><td>" + IOUtil.escapeXml(ds.getCalibratedBy()) + "</td></tr>"
+                        + "<tr><th>File:</th><td>" + IOUtil.escapeXml(frame.getFilename()) + "</td></tr>"
+                        + "<tr><th>Setpoint Current:</th><td>" + currentFormatter.format(frame.getCurrent()) + " " + IOUtil.escapeXml(frame.getCurrentUnits()) + "</td></tr>"
                         + "<tr><th>Setpoint Margin:</th><td>" + frame.getSignedMargin() + "%</td></tr>"
                         + "</tbody>"
                         + "</table>";
@@ -106,19 +107,19 @@ public final class ExportElogActionListener implements ActionListener {
                             controlSystemSetpoint = 0d;
                         }
 
-                        body = body + "<h3 style=\"color: gold; background-color: purple;\">" + escapeXml(caption) + "</h3>"
+                        body = body + "<h3 style=\"color: gold; background-color: purple;\">" + IOUtil.escapeXml(caption) + "</h3>"
                                 + "<table>"
                                 + "<tbody>"
-                                + "<tr><th>Calculated Setpoint:</th><td>" + escapeXml(doseRateFormatter.format(dataset.getSetpoint())) + " rads/hr</td></tr>"
-                                + "<tr><th>Actual Setpoint:</th><td>" + escapeXml(doseRateFormatter.format(controlSystemSetpoint)) + " rads/hr</td></tr>"
-                                + "<tr><th>Fit Equation:</th><td>" + escapeXml(dataset.getFitEquation()) + "</td></tr>"
-                                + "<tr><th>R<sup>2</sup>:</th><td>" + escapeXml(dataset.getRSquareLabel()) + "</td></tr>"
+                                + "<tr><th>Calculated Setpoint:</th><td>" + IOUtil.escapeXml(doseRateFormatter.format(dataset.getSetpoint())) + " rads/hr</td></tr>"
+                                + "<tr><th>Actual Setpoint:</th><td>" + IOUtil.escapeXml(doseRateFormatter.format(controlSystemSetpoint)) + " rads/hr</td></tr>"
+                                + "<tr><th>Fit Equation:</th><td>" + IOUtil.escapeXml(dataset.getFitEquation()) + "</td></tr>"
+                                + "<tr><th>R<sup>2</sup>:</th><td>" + IOUtil.escapeXml(dataset.getRSquareLabel()) + "</td></tr>"
                                 + "</tbody>"
                                 + "</table>"
                                 + "[figure:" + figureCount++ + "]"
                                 + "<table>"
                                 + "<thead>"
-                                + "<tr><th>Current (" + escapeXml(frame.getCurrentUnits()) + ")</th><th>Dose Rate (rads/hr)</th></tr>"
+                                + "<tr><th>Current (" + IOUtil.escapeXml(frame.getCurrentUnits()) + ")</th><th>Dose Rate (rads/hr)</th></tr>"
                                 + "</thead>"
                                 + "<tbody>";
 
@@ -171,18 +172,5 @@ public final class ExportElogActionListener implements ActionListener {
                 }
             }
         }.execute();
-    }
-
-    private String escapeXml(String input) {
-        String output = input;
-
-        if (input != null) {
-            output = output.replace("&", "&#038;"); // Must do this one first as & within other replacements
-            output = output.replace("\"", "&#034;");
-            output = output.replace("'", "&#039;");
-            output = output.replace("<", "&#060;");
-            output = output.replace(">", "&#062;");
-        }
-        return output;
     }
 }
