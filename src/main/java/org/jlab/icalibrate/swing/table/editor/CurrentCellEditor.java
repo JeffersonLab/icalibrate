@@ -13,11 +13,17 @@ import javax.swing.SwingConstants;
 import javax.swing.text.NumberFormatter;
 
 /**
+ * CellEditor for machine current.
  *
  * @author ryans
  */
 public class CurrentCellEditor extends DefaultCellEditor {
 
+    /**
+     * Create a new CurrentCellEditor.
+     *
+     * @param textField The text field
+     */
     public CurrentCellEditor(JTextField textField) {
         super(textField);
     }

@@ -13,11 +13,17 @@ import javax.swing.SwingConstants;
 import javax.swing.text.NumberFormatter;
 
 /**
+ * CellEditor for ion chamber dose rate.
  *
  * @author ryans
  */
 public class DoseRateCellEditor extends DefaultCellEditor {
 
+    /**
+     * Create a new DoseRateCellEditor.
+     *
+     * @param textField The text field
+     */
     public DoseRateCellEditor(JTextField textField) {
         super(textField);
     }

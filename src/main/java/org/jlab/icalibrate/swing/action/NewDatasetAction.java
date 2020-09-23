@@ -11,7 +11,7 @@ import org.jlab.icalibrate.swing.dialog.CreateDatasetProgressDialog;
 import org.jlab.icalibrate.swing.worker.CreateNewDatasetWorker;
 
 /**
- * Create a new dataset action.
+ * Handle a create new dataset request.
  * 
  * This class is an Action and not simply an ActionListener because the label (name) is used to
  * replace the default Wizard finish button label.

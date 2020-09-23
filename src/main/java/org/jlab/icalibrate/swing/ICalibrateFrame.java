@@ -993,6 +993,11 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
         this.setTitle(titleBar + " - iCalibrate");
     }
 
+    /**
+     * Update the sample data with the specified values.
+     *
+     * @param data The new data
+     */
     public void updateSampleData(List<DoseRateMeasurement> data) {
 
         Collections.sort(data);
@@ -1403,18 +1408,38 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
         updateTitleBar();
     }
 
+    /**
+     * Return the current units.
+     *
+     * @return The units
+     */
     public String getCurrentUnits() {
         return currentUnitsLabel.getText();
     }
 
+    /**
+     * Return the current.
+     *
+     * @return The current
+     */
     public int getCurrent() {
         return currentSlider.getValue();
     }
 
+    /**
+     * Return the margin.
+     *
+     * @return The margin
+     */
     public int getMargin() {
         return marginSlider.getValue();
     }
-    
+
+    /**
+     * Return the signed margin.
+     *
+     * @return The signed margin
+     */
     public int getSignedMargin() {
         int value = marginSlider.getValue();
         
@@ -1425,6 +1450,12 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
         return value;
     }
 
+    /**
+     * Return the setpoint for the row in the setpoint table at the provided index.
+     *
+     * @param index The setpoint table index
+     * @return The setpoint value
+     */
     public Double getControlSystemSetpoint(int index) {
         return (Double) setpointTableModel.getValueAt(index, 1);
     }

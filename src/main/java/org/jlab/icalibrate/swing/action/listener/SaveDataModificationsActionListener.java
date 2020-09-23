@@ -8,7 +8,7 @@ import org.jlab.icalibrate.swing.ICalibrateFrame;
 import org.jlab.icalibrate.swing.dialog.ModifySampleDataDialog;
 
 /**
- * Save modified data.
+ * Handle a save modified sample data request.
  * 
  * @author ryans
  */

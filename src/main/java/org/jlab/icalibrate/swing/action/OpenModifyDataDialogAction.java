@@ -8,6 +8,7 @@ import org.jlab.icalibrate.swing.dialog.ModifySampleDataDialog;
 import org.jlab.icalibrate.swing.util.DoseRateChartPanel;
 
 /**
+ * Handle an open the modify data dialog request.
  *
  * @author ryans
  */
@@ -17,6 +18,13 @@ public class OpenModifyDataDialogAction extends AbstractAction {
     private final ModifySampleDataDialog modifyDoseRateDialog;
     private final ICalibrateFrame frame;
 
+    /**
+     * Create a new OpenModifyDataDialogAction.
+     *
+     * @param chartPanel The chart panel
+     * @param modifyDoseRateDialog The modify dose rate dialog
+     * @param frame The main application frame
+     */
     public OpenModifyDataDialogAction(DoseRateChartPanel chartPanel, ModifySampleDataDialog modifyDoseRateDialog, ICalibrateFrame frame) {
         this.chartPanel = chartPanel;
         this.modifyDoseRateDialog = modifyDoseRateDialog;

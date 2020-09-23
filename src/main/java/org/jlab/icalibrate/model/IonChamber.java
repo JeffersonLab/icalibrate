@@ -118,6 +118,11 @@ public final class IonChamber implements Comparable<IonChamber> {
         return friendlyName;
     }
 
+    /**
+     * Return the friendly name, or if unavailable, return the EPICS name.
+     *
+     * @return The friendly name, or the EPICS name
+     */
     public String getFriendlyNameOrEpicsName() {
         String name;
 
@@ -186,6 +191,16 @@ public final class IonChamber implements Comparable<IonChamber> {
         return idPvName;
     }
 
+    /**
+     * Creates the list of ion chambers for a hall using either the CED or properties file.
+     *
+     * @param hall The experimental hall
+     * @return The list of ion chambers
+     * @throws MissingDataException If the data format is unrecognizable
+     * @throws MalformedURLException If the remote server URL is malformed
+     * @throws ProtocolException If unable to communicate with the server
+     * @throws IOException If an I/O problem occurs
+     */
     public static List<IonChamber> createIcs(Hall hall) throws MissingDataException, MalformedURLException, ProtocolException, IOException {
         if ("true".equals(ICalibrateApp.APP_PROPERTIES.getProperty("NAMES_FROM_CED"))) {
             return createFromCed(hall);
@@ -194,6 +209,16 @@ public final class IonChamber implements Comparable<IonChamber> {
         }
     }
 
+    /**
+     * Create a new list of hall IonChambers from the CEBAF Element Database (CED).
+     *
+     * @param hall The experimental hall
+     * @return The list of ion chambers
+     * @throws MissingDataException If the JSON data format is unrecognizable
+     * @throws MalformedURLException If the remote server URL is malformed
+     * @throws ProtocolException If unable to communicate with the server
+     * @throws IOException If an I/O problem occurs
+     */
     public static List<IonChamber> createFromCed(Hall hall) throws MissingDataException, MalformedURLException, ProtocolException, IOException {
         List<IonChamber> icList = new ArrayList<>();
 
@@ -227,6 +252,13 @@ public final class IonChamber implements Comparable<IonChamber> {
         return icList;
     }
 
+    /**
+     * Create a new list of ion chambers from the icalibrate.properties file.
+     *
+     * @param hall The experimental hall
+     * @return The list of ion chambers
+     * @throws MissingDataException If the properties file format is unrecognizable
+     */
     public static List<IonChamber> createIcsFromConfig(Hall hall) throws MissingDataException {
 
         List<IonChamber> icList = new ArrayList<>();
