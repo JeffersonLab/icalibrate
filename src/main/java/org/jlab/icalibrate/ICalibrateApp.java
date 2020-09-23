@@ -18,7 +18,9 @@ import org.jlab.icalibrate.swing.ICalibrateFrame;
 import org.jlab.icalibrate.swing.MaydayFrame;
 
 /**
- * The entry point of the application.
+ * The entry point of the ion chamber calibration application.  The application measures dose rates of ion chambers at
+ * experimental hall end stations at Jefferson Lab and uses this information to set dose limits to protect the machine
+ * during production runs.
  *
  * The ICalibrateApp class loads the configuration properties, initializes a network connection to
  * EPICS, and initializes the Swing GUI.
@@ -35,6 +37,9 @@ public class ICalibrateApp {
      */
     public static final Properties APP_PROPERTIES = new Properties();
 
+    /**
+     * Contain the application release data and version.
+     */
     public static final Properties RELEASE_PROPERTIES = new Properties();
 
     /**
