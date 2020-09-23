@@ -286,10 +286,20 @@ public class CreateNewDatasetParameters {
         return channelManager;
     }
 
+    /**
+     * Sets the list of ion chambers.
+     *
+     * @param icList The ion chambers
+     */
     public void setIonChamberList(List<IonChamber> icList) {
         this.icList = icList;
     }
 
+    /**
+     * Return the list of ion chambers.
+     *
+     * @return The ion chambers
+     */
     public List<IonChamber> getIonChamberList() {
         return icList;
     }

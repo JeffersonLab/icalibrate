@@ -199,7 +199,7 @@ public final class IonChamber implements Comparable<IonChamber> {
 
         String url = "http://ced.acc.jlab.org/inventory?t=IonChamber&Ex=iCalibrate%3D1&a=A_Hall" + hall.name() + "&p=EPICSName%2C+NameAlias&out=json";
 
-        String jsonStr = IOUtil.doHtmlGet(url, 10000, 10000);
+        String jsonStr = IOUtil.doHttpGet(url, 10000, 10000);
 
         JsonReader reader = Json.createReader(new StringReader(jsonStr));
 

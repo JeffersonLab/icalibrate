@@ -269,6 +269,11 @@ public class ChartDataset {
         return equation;
     }
 
+    /**
+     * Return the R^2 label.
+     *
+     * @return The label
+     */
     public String getRSquareLabel() {
         double r2;
         if (isLogarithmicSelected()) { // Logarithmic

@@ -9,6 +9,9 @@ import java.net.URL;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+/**
+ * Utility classes for IO.
+ */
 public class IOUtil {
 
     private static final Logger LOGGER = Logger.getLogger(
@@ -37,7 +40,18 @@ public class IOUtil {
         return str;
     }
 
-    public static String doHtmlGet(String urlStr, int connectTimeout, int readTimeout) throws MalformedURLException, ProtocolException, IOException {
+    /**
+     * Perform an HTTP GET request.
+     *
+     * @param urlStr The URL to connect to
+     * @param connectTimeout How long to wait to connect
+     * @param readTimeout How long to wait to transfer data
+     * @return The response as a String
+     * @throws MalformedURLException If the URL is malformed
+     * @throws ProtocolException If unable to communicate with the remote host
+     * @throws IOException If unable to perform the request
+     */
+    public static String doHttpGet(String urlStr, int connectTimeout, int readTimeout) throws MalformedURLException, ProtocolException, IOException {
         URL url;
         HttpURLConnection con;
    
