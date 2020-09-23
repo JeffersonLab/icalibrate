@@ -80,4 +80,8 @@ processResources {
 
 javadoc {
     options.overview = "src/main/java/overview.html"
+    options.source = 8
+    options.with {
+        links 'https://docs.oracle.com/javase/8/docs/api/'
+    }
 }
