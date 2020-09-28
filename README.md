@@ -54,8 +54,7 @@ gradlew run
 
 **Note:** The _assembleDist_ Gradle target will build tar and zip files that can be distributed, and these distributions include start scripts to launch the application.
 
-**Note:** To enable debug logging you can configure the JVM to use the logging properties file:  
-``-Djava.util.logging.config.file=config/debug-logging.properties``
+**Note:** To enable debug logging, run with CA writes disabled, and logbook set to _TLOG_ use the __testRun__ task
 
 ## See Also
    - [javadocs](https://jeffersonlab.github.io/icalibrate/)
