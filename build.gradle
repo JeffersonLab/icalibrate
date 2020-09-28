@@ -6,10 +6,10 @@ plugins {
 
 description = "Ion chamber calibration application"
 group 'org.jlab'
-version = '2.0.0'
+version = '2.0.1'
 
 ext {
-    releaseDate = 'Sep 22 2020'
+    releaseDate = 'Sep 28 2020'
 }
 
 java {
@@ -30,8 +30,7 @@ dependencies {
     implementation 'org.jfree:jfreechart:1.0.19'
     implementation 'org.epics:jca:2.4.5'
     implementation 'org.apache.commons:commons-math3:3.6.1'
-    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.2'
-    implementation 'org.jlab:jlog:3.3.1'
+    implementation 'org.jlab:jlog:4.0.0'
 
     testImplementation 'junit:junit:4.12'
 }
