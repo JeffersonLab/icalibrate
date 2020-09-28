@@ -30,7 +30,7 @@ dependencies {
     implementation 'org.jfree:jfreechart:1.0.19'
     implementation 'org.epics:jca:2.4.5'
     implementation 'org.apache.commons:commons-math3:3.6.1'
-    implementation 'org.jlab:jlog:4.0.0'
+    implementation 'org.jlab:jlog:4.0.1'
 
     testImplementation 'junit:junit:4.12'
 }
