@@ -874,11 +874,7 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
         exportelogMenuItem.setEnabled(true);
         exportSnapMenuItem.setEnabled(true);
         exportEpicsMenuItem.setEnabled(true);
-        if (persisted) {
-            saveMenuItem.setEnabled(false);
-        } else {
-            saveMenuItem.setEnabled(true);
-        }
+        saveMenuItem.setEnabled(!persisted);
     }
 
     private void noSampleFileLoaded() {
@@ -973,11 +969,7 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
             negativeTargets = new String[0];
         }
 
-        if (Arrays.asList(negativeTargets).contains(target)) {
-            negativeMarginCheckbox.setSelected(true);
-        } else {
-            negativeMarginCheckbox.setSelected(false);
-        }
+        negativeMarginCheckbox.setSelected(Arrays.asList(negativeTargets).contains(target));
 
         updateTitleBar();
         sampleFileLoaded();
@@ -1106,7 +1098,7 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
     /**
      * Selects an ion chamber in the setpoint table.
      *
-     * @param cavity The cavity to select
+     * @param rowIndex The cavity to select
      */
     private void selectIonChamberInSetpointTable(int rowIndex) {
         setpointTable.getSelectionModel().setSelectionInterval(rowIndex,
@@ -1335,7 +1327,7 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
                     numMajorTicks = 6;
                 }
                 
-                int major = (int) (maxCurrent / numMajorTicks);
+                int major = maxCurrent / numMajorTicks;
                 int minor = 0; // none
                 if (maxCurrent <= 100) {
                     minor = (int) (major / 2.0d);
@@ -1399,11 +1391,7 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
      */
     public void setStateSaved(boolean persisted) {
         this.persisted = persisted;
-        if (persisted) {
-            saveMenuItem.setEnabled(false);
-        } else {
-            saveMenuItem.setEnabled(true);
-        }
+        saveMenuItem.setEnabled(!persisted);
 
         updateTitleBar();
     }

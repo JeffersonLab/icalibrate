@@ -6,5 +6,5 @@ package org.jlab.icalibrate.model;
  * @author ryans
  */
 public enum Laser {
-    A, B, C, D;
+    A, B, C, D
 }

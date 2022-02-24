@@ -13,9 +13,8 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModifyDataTableModel extends AbstractTableModel {
 
-    private final List<String> columnNames = Arrays.asList(new String[]{
-        "<html><center>Current<br/>(microAmps)</center></html>",
-        "<html><center>Dose Rate<br/>(rads/hr)</center></html>"});
+    private final List<String> columnNames = Arrays.asList("<html><center>Current<br/>(microAmps)</center></html>",
+            "<html><center>Dose Rate<br/>(rads/hr)</center></html>");
     private List<ModifyDoseRateRow> rows = new ArrayList<>();
 
     /**

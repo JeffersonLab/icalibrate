@@ -132,7 +132,7 @@ public class GenericButtonAreaLayout implements LayoutManager {
             int xOffset = 0;
             boolean ltr = container.getComponentOrientation().
                     isLeftToRight();
-            boolean reverse = (ltr) ? reverseButtons : !reverseButtons;
+            boolean reverse = ltr == reverseButtons;
 
             for (int counter = 0; counter < numChildren; counter++) {
                 Dimension pref = children[counter].getPreferredSize();

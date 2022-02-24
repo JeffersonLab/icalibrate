@@ -25,7 +25,7 @@ public class EditableDoseRateCellRenderer extends DefaultTableCellRenderer {
             boolean isSelected, boolean hasFocus, int row, int column) {
 
         if (value != null) {
-            value = formatter.format((Number) value);
+            value = formatter.format(value);
         }
 
         return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);

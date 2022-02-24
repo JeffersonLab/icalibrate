@@ -14,11 +14,11 @@ import org.jlab.icalibrate.model.IonChamber;
  */
 public class ModifySetpointTableModel extends AbstractTableModel {
 
-    private final List<String> columnNames = Arrays.asList(new String[]{"Ion Chamber",
-        "<html><center>Existing<br/>Setpoint (rads/hr)</center></html>",
-        "<html><center>Calculated<br/>Setpoint (rads/hr)</center></html>",
-        "<html><center style=\"color: green;\">New<br/>Setpoint (rads/hr)<br/>[Editable]</center></html>",
-        "Include"});
+    private final List<String> columnNames = Arrays.asList("Ion Chamber",
+            "<html><center>Existing<br/>Setpoint (rads/hr)</center></html>",
+            "<html><center>Calculated<br/>Setpoint (rads/hr)</center></html>",
+            "<html><center style=\"color: green;\">New<br/>Setpoint (rads/hr)<br/>[Editable]</center></html>",
+            "Include");
     private List<ModifySetpointRow> rows = new ArrayList<>();
 
     /**

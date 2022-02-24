@@ -80,10 +80,7 @@ public final class IonChamber implements Comparable<IonChamber> {
             return false;
         }
         final IonChamber other = (IonChamber) obj;
-        if (!Objects.equals(this.epicsName, other.epicsName)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.epicsName, other.epicsName);
     }  
     
     @Override

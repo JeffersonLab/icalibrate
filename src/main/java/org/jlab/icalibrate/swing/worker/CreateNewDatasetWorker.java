@@ -240,7 +240,7 @@ public class CreateNewDatasetWorker extends SwingWorker<List<IonChamberDataset>,
 
                 LOGGER.log(Level.FINEST, "Attenuator value now: {0}", attenuator);
 
-                int progress = (int) (i * (100 / params.getNumberOfSteps()));
+                int progress = i * (100 / params.getNumberOfSteps());
                 //System.out.println("setting progress: " + progress);
                 this.setProgress(progress); // Set percent progress for property change listeners   
             }        
@@ -249,7 +249,7 @@ public class CreateNewDatasetWorker extends SwingWorker<List<IonChamberDataset>,
     private void doStep(int step, int attenuator, List<IonChamber> icList,
             List<List<DoseRateMeasurement>> measurementMatrix, HallPvSet pvs) throws
             InterruptedException,
-            FSDException, AppException {
+            AppException {
 
         if (this.isFsdTripThisInstant()) {
             throw new FSDException("No sense in starting this step without first clearing the FSD");
@@ -283,7 +283,7 @@ public class CreateNewDatasetWorker extends SwingWorker<List<IonChamberDataset>,
 
         publish(new IncrementalResultChunk(WorkerState.SETTLING, step, null));
 
-        Thread.sleep((long) (params.getSettleSeconds() * 1000));
+        Thread.sleep(params.getSettleSeconds() * 1000);
 
         double current = 0.0d;
 

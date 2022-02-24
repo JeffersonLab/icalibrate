@@ -98,11 +98,7 @@ public class Wizard<T> extends ModalWaitDialog {
         outlineStack.getComponents()[pageIndex].setFont(new Font("Tahoma", 1, 11));
         pageTitleLabel.setText(page.getTitle());
 
-        if (pageIndex <= 0) {
-            previousButton.setEnabled(false);
-        } else {
-            previousButton.setEnabled(true);
-        }
+        previousButton.setEnabled(pageIndex > 0);
 
         if (pageIndex >= pageList.size() - 1) {
             nextButton.setEnabled(false);

@@ -18,9 +18,9 @@ public class ChartDataset {
     private final IonChamberDataset measuredDataset;
     private final XYSeriesCollection seriesData;
     private LineFunction2D linearFit;
-    private LineFunction2D logarithmicFit;
-    private SimpleRegression linearRegression = new SimpleRegression();
-    private SimpleRegression logLinearRegression = new SimpleRegression();
+    private final LineFunction2D logarithmicFit;
+    private final SimpleRegression linearRegression = new SimpleRegression();
+    private final SimpleRegression logLinearRegression = new SimpleRegression();
     private int minIndex = 0;
     private int maxIndex = 0;
     private boolean logarithmicSelected = false;
@@ -113,7 +113,7 @@ public class ChartDataset {
         }
 
         if (fitSubset.getItemCount() > 1) {
-            double regressionParameters[] = Regression.getOLSRegression(tmp, 0);
+            double[] regressionParameters = Regression.getOLSRegression(tmp, 0);
 
             double yIntercept = regressionParameters[0];
             double slope = regressionParameters[1];

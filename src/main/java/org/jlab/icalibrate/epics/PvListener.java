@@ -19,8 +19,8 @@ public interface PvListener {
      * @param count The EPICS item count
      * @param enumLabels labels for the EPICS enumeration state if datatype is ENUM, null otherwise
      */
-    public void notifyPvInfo(String pv, boolean couldConnect, DBRType type, Integer count,
-            String[] enumLabels);
+    void notifyPvInfo(String pv, boolean couldConnect, DBRType type, Integer count,
+                      String[] enumLabels);
 
     /**
      * Notification of PV value change.
@@ -28,6 +28,6 @@ public interface PvListener {
      * @param pv The PV
      * @param dbr The EPICS DataBaseRecord
      */
-    public void notifyPvUpdate(String pv, DBR dbr);
+    void notifyPvUpdate(String pv, DBR dbr);
     
 }
