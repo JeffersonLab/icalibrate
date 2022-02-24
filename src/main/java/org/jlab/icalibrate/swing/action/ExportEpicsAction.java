@@ -14,10 +14,10 @@ import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
-import org.jlab.elog.Body;
-import org.jlab.elog.LogEntry;
-import org.jlab.elog.exception.LogCertificateException;
-import org.jlab.elog.exception.LogIOException;
+import org.jlab.jlog.Body;
+import org.jlab.jlog.LogEntry;
+import org.jlab.jlog.exception.LogCertificateException;
+import org.jlab.jlog.exception.LogIOException;
 import org.jlab.icalibrate.ICalibrateApp;
 import org.jlab.icalibrate.epics.ChannelManager;
 import org.jlab.icalibrate.exception.AppException;
