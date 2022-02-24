@@ -1,4 +1,4 @@
-# icalibrate
+# icalibrate [![Java CI with Gradle](https://github.com/JeffersonLab/icalibrate/actions/workflows/gradle.yml/badge.svg)](https://github.com/JeffersonLab/icalibrate/actions/workflows/gradle.yml)
 Ion chamber calibration desktop application for Jefferson Lab.  This software is developed with Java Swing.
 
 ![Screenshot](https://raw.githubusercontent.com/JeffersonLab/icalibrate/master/doc/Screenshot.png)
