@@ -12,9 +12,10 @@ ext {
     releaseDate = 'Sep 28 2020'
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+tasks.withType(JavaCompile) {
+    options.release = 8
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
 }
 
 repositories {
@@ -32,7 +33,7 @@ dependencies {
 }
 
 application {
-    mainClassName = 'org.jlab.icalibrate.ICalibrateApp'
+    mainClass.set('org.jlab.icalibrate.ICalibrateApp')
     applicationDefaultJvmArgs = ['-DCAJ_STRIP_HOSTNAME=CAJ_STRIP_HOSTNAME']
 }
 
@@ -85,7 +86,7 @@ task testRun(type: JavaExec, dependsOn: build) {
     classpath = files('src/test/resources')
     classpath += sourceSets.main.runtimeClasspath
     classpath += files('config')
-    main = 'org.jlab.icalibrate.ICalibrateApp'
+    mainClass.set('org.jlab.icalibrate.ICalibrateApp')
     systemProperties = [
             'java.util.logging.config.file': 'config/debug-logging.properties'
     ]
