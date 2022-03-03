@@ -4,18 +4,24 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
 ![Screenshot](https://raw.githubusercontent.com/JeffersonLab/icalibrate/master/doc/Screenshot.png)
 
 ---
- - [Build](https://github.com/JeffersonLab/icalibrate#build)
+ - [Install](https://github.com/JeffersonLab/icalibrate#install)
+ - [API](https://github.com/JeffersonLab/icalibrate#api)
  - [Configure](https://github.com/JeffersonLab/icalibrate#configure)
- - [Run](https://github.com/JeffersonLab/icalibrate#run)
+ - [Build](https://github.com/JeffersonLab/icalibrate#build)
  - [See Also](https://github.com/JeffersonLab/icalibrate#see-also)
 ---
 
-## Build
+## Install
 ```
-git clone https://github.com/JeffersonLab/icalibrate.git
-cd icalibrate
-gradlew build
+gradlew run
 ```
+
+**Note:** The _assembleDist_ Gradle target will build tar and zip files that can be distributed, and these distributions include start scripts to launch the application.
+
+**Note:** To enable debug logging, run with CA writes disabled, and logbook set to _TLOG_ use the __testRun__ task
+
+## API
+[javadocs](https://jeffersonlab.github.io/icalibrate/)
 
 ## Configure
 ```
@@ -47,15 +53,13 @@ Each of Hall _A_, _C_, and _D_ have one of these properties (Hall A shown):
 | HALLA_EPICS_NAME_CSV | Comma separated values of EPICS PV base name for Ion Chambers; only used if NAMES_FROM_CED is false |
 | HALLA_FRIENDLY_NAME_CSV | Comma separated values of Human Readable names for Ion Chambers; only used if NAMES_FROM_CED is false |
 | HALLA_CED_NAME_CSV | Comma separated values of CED names for Ion Chambers; only used if NAMES_FROM_CED is false |
-## Run
-```
-gradlew run
-```
 
-**Note:** The _assembleDist_ Gradle target will build tar and zip files that can be distributed, and these distributions include start scripts to launch the application.
-
-**Note:** To enable debug logging, run with CA writes disabled, and logbook set to _TLOG_ use the __testRun__ task
+## Build
+```
+git clone https://github.com/JeffersonLab/icalibrate.git
+cd icalibrate
+gradlew build
+```
 
 ## See Also
-   - [javadocs](https://jeffersonlab.github.io/icalibrate/)
    - [jlog](https://github.com/JeffersonLab/jlog)
