@@ -12,13 +12,26 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
 ---
 
 ## Install
+Download from [Releases](https://github.com/JeffersonLab/icalibrate/releases) or build yourself.
+
+Start scripts are created and dependencies collected by the Gradle distribution target:
+
 ```
-gradlew run
+gradlew assembleDist
 ```
 
-**Note:** The _assembleDist_ Gradle target will build tar and zip files that can be distributed, and these distributions include start scripts to launch the application.
+Launch with:
 
-**Note:** To enable debug logging, run with CA writes disabled, and logbook set to _TLOG_ use the __testRun__ task
+UNIX:
+```
+bin/icalibrate
+```
+Windows:
+```
+bin/icalibrate.bat
+```
+
+**Note:** To enable debug logging, run with CA writes disabled, and logbook set to _TLOG_ use the __testRun__ Gradle task
 
 ## API
 [javadocs](https://jeffersonlab.github.io/icalibrate/)
