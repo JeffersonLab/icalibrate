@@ -12,13 +12,28 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
 ---
 
 ## Install
+This application requires a Java 8+ JVM and standard library to run.
+
+Download from [Releases](https://github.com/JeffersonLab/icalibrate/releases) or [build](https://github.com/JeffersonLab/icalibrate#build) yourself.
+
+Start scripts are created and dependencies collected by the Gradle distribution target:
+
 ```
-gradlew run
+gradlew assembleDist
 ```
 
-**Note:** The _assembleDist_ Gradle target will build tar and zip files that can be distributed, and these distributions include start scripts to launch the application.
+Launch with:
 
-**Note:** To enable debug logging, run with CA writes disabled, and logbook set to _TLOG_ use the __testRun__ task
+UNIX:
+```
+bin/icalibrate
+```
+Windows:
+```
+bin/icalibrate.bat
+```
+
+**Note:** To enable debug logging, run with CA writes disabled, and logbook set to _TLOG_ use the __testRun__ Gradle task
 
 ## API
 [javadocs](https://jeffersonlab.github.io/icalibrate/)
@@ -55,11 +70,17 @@ Each of Hall _A_, _C_, and _D_ have one of these properties (Hall A shown):
 | HALLA_CED_NAME_CSV | Comma separated values of CED names for Ion Chambers; only used if NAMES_FROM_CED is false |
 
 ## Build
+This project is built with [Java 17](https://adoptium.net/) (compiled to Java 8 bytecode), and uses the [Gradle 7](https://gradle.org/) build tool to automatically download dependencies and build the project from source:
+
 ```
 git clone https://github.com/JeffersonLab/icalibrate.git
 cd icalibrate
 gradlew build
 ```
+
+**Note**: If you do not already have Gradle installed, it will be installed automatically by the wrapper script included in the source
+
+**Note for JLab On-Site Users**: Jefferson Lab has an intercepting [proxy](https://gist.github.com/slominskir/92c25a033db93a90184a5994e71d0b78)
 
 ## See Also
    - [jlog](https://github.com/JeffersonLab/jlog)
