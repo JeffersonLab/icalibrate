@@ -16,8 +16,6 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
 ## Install
 This application requires a Java 8+ JVM and standard library to run.
 
-Download from [Releases](https://github.com/JeffersonLab/icalibrate/releases) or [build](https://github.com/JeffersonLab/icalibrate#build) yourself.
-
 Download from [Releases](https://github.com/JeffersonLab/icalibrate/releases) or [build](https://github.com/JeffersonLab/icalibrate#build) the [distribution](https://github.com/JeffersonLab/icalibrate#release) yourself.
 
 Launch with:
