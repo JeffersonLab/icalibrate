@@ -8,6 +8,8 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
  - [API](https://github.com/JeffersonLab/icalibrate#api)
  - [Configure](https://github.com/JeffersonLab/icalibrate#configure)
  - [Build](https://github.com/JeffersonLab/icalibrate#build)
+ - [Develop](https://github.com/JeffersonLab/icalibrate#develop)
+ - [Release](https://github.com/JeffersonLab/icalibrate#release)  
  - [See Also](https://github.com/JeffersonLab/icalibrate#see-also)
 ---
 
@@ -16,11 +18,7 @@ This application requires a Java 8+ JVM and standard library to run.
 
 Download from [Releases](https://github.com/JeffersonLab/icalibrate/releases) or [build](https://github.com/JeffersonLab/icalibrate#build) yourself.
 
-Start scripts are created and dependencies collected by the Gradle distribution target:
-
-```
-gradlew assembleDist
-```
+Download from [Releases](https://github.com/JeffersonLab/icalibrate/releases) or [build](https://github.com/JeffersonLab/icalibrate#build) the [distribution](https://github.com/JeffersonLab/icalibrate#release) yourself.
 
 Launch with:
 
@@ -82,5 +80,24 @@ gradlew build
 
 **Note for JLab On-Site Users**: Jefferson Lab has an intercepting [proxy](https://gist.github.com/slominskir/92c25a033db93a90184a5994e71d0b78)
 
+## Develop
+The app can be run in a mode that does not require the CED (an on-site connection) using the `NAMES_FROM_CED` property.
+
+**Note**: Javadocs can be generated with the command:
+```
+gradlew javadoc
+```
+
+**Note**: The graphical Java Swing forms were built using the [Apache Netbeans](https://netbeans.apache.org/) Matisse builder tool.  It's recommended that graphical component modifications be made using this tool, which modifies the XML `*.form` files.  The XML is used to dyanamically generate Java Swing code.
+
+## Release
+1. Bump the version number in build.gradle and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).
+1. Run the Gradle distribution target:
+```
+gradlew assembleDist
+```
+3. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/icalibrate/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Attach the generated distribution zip to the release.
+
 ## See Also
    - [jlog](https://github.com/JeffersonLab/jlog)
+   - [phaser-client](https://github.com/JeffersonLab/phaser-client)
