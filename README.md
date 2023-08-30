@@ -9,7 +9,8 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
  - [Configure](https://github.com/JeffersonLab/icalibrate#configure)
  - [Build](https://github.com/JeffersonLab/icalibrate#build)
  - [Develop](https://github.com/JeffersonLab/icalibrate#develop)
- - [Release](https://github.com/JeffersonLab/icalibrate#release)  
+ - [Release](https://github.com/JeffersonLab/icalibrate#release)
+ - [Deploy](https://github.com/JeffersonLab/icalibrate#deploy)  
  - [See Also](https://github.com/JeffersonLab/icalibrate#see-also)
 ---
 
@@ -95,6 +96,25 @@ gradlew javadoc
 gradlew assembleDist
 ```
 3. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/icalibrate/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Attach the generated distribution zip to the release.
+
+## Deploy
+At Jefferson Lab the app and all of it's data is stored on the ops network fileystem at `/cs/opshome/IonChambers` and can be launched via JMenu using search keyword `icalibrate`.  Deploying a new version typically looks like (version 2.0.0 shown):
+
+```
+# Can't wget from ops network so use dev then scp
+ssh devl00
+cd /tmp
+wget https://github.com/JeffersonLab/icalibrate/releases/download/v2.0.0/icalibrate-2.0.0.zip
+
+ssh opsl00
+cd /tmp
+scp devl00:/tmp/icalibrate-2.0.0.zip .
+unzip icalibrate-2.0.0.zip
+mv icalibrate-2.0.0 /cs/opshome/IonChambers/icalibrate/2.0.0
+cd /cs/opshome/IonChambers
+unlink pro
+ln -s icalibrate/2.0.0 pro
+```
 
 ## See Also
    - [phaser-client](https://github.com/JeffersonLab/phaser-client)
