@@ -4,14 +4,17 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
 ![Screenshot](https://raw.githubusercontent.com/JeffersonLab/icalibrate/master/doc/Screenshot.png)
 
 ---
+ - [Overview](https://github.com/JeffersonLab/icalibrate#overview)
  - [Install](https://github.com/JeffersonLab/icalibrate#install)
- - [API](https://github.com/JeffersonLab/icalibrate#api)
  - [Configure](https://github.com/JeffersonLab/icalibrate#configure)
  - [Build](https://github.com/JeffersonLab/icalibrate#build)
  - [Develop](https://github.com/JeffersonLab/icalibrate#develop)
  - [Release](https://github.com/JeffersonLab/icalibrate#release)  
  - [See Also](https://github.com/JeffersonLab/icalibrate#see-also)
 ---
+
+## Overview
+The iCalibrate application provides operators the ability to perform hall ion chamber calibration.   The app presents operators with a wizard dialog to guide them through the process of gathering dose rate measurements.  Based on options provided by operators the software will ramp the hall laser attenuator incrementally and measure dose rates at the various resulting currents.  The software will then use the gathered data to graph a scatter plot with a fit to allow quickly determining an appropriate trip setpoint.  The data can be saved in a Hall Calibration Dataset (HCD) file to be later recalled if necessary.  The ability to apply computed setpoints to the EPICS control system or alternatively to output a SNAP file for future use is also provided.
 
 ## Install
 This application requires a Java 8+ JVM and standard library to run.
@@ -30,9 +33,6 @@ bin/icalibrate.bat
 ```
 
 **Note:** To enable debug logging, run with CA writes disabled, and logbook set to _TLOG_ use the __testRun__ Gradle task
-
-## API
-[javadocs](https://jeffersonlab.github.io/icalibrate/)
 
 ## Configure
 ```
@@ -97,5 +97,5 @@ gradlew assembleDist
 3. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/icalibrate/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Attach the generated distribution zip to the release.
 
 ## See Also
-   - [jlog](https://github.com/JeffersonLab/jlog)
    - [phaser-client](https://github.com/JeffersonLab/phaser-client)
+   - [jlog](https://github.com/JeffersonLab/jlog) 
