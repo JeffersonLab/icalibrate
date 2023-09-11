@@ -101,14 +101,9 @@ gradlew assembleDist
 At Jefferson Lab the app and all of it's data is stored on the ops network fileystem at `/cs/opshome/IonChambers` and can be launched via JMenu using search keyword `icalibrate`.  Deploying a new version typically looks like (version 2.0.0 shown):
 
 ```
-# Can't wget from ops network so use dev then scp
-ssh devl00
+ssh sqam@devl00
 cd /tmp
 wget https://github.com/JeffersonLab/icalibrate/releases/download/v2.0.0/icalibrate-2.0.0.zip
-
-ssh opsl00
-cd /tmp
-scp devl00:/tmp/icalibrate-2.0.0.zip .
 unzip icalibrate-2.0.0.zip
 mv icalibrate-2.0.0 /cs/opshome/IonChambers/icalibrate/2.0.0
 cd /cs/opshome/IonChambers
