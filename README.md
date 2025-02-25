@@ -17,6 +17,8 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
 ## Overview
 The iCalibrate application provides operators the ability to perform hall ion chamber calibration.   The app presents operators with a wizard dialog to guide them through the process of gathering dose rate measurements.  Based on options provided by operators the software will ramp the hall laser attenuator incrementally and measure dose rates at the various resulting currents.  The software will then use the gathered data to graph a scatter plot with a fit to allow quickly determining an appropriate trip setpoint.  The data can be saved in a Hall Calibration Dataset (HCD) file to be later recalled if necessary.  The ability to apply computed setpoints to the EPICS control system or alternatively to output a SNAP file for future use is also provided.
 
+See [User Guide](https://github.com/JeffersonLab/icalibrate/raw/refs/heads/main/doc/iCalibrate%20User%20Guide.docx)
+
 ## Install
 This application requires a Java 8+ JVM and standard library to run.
 
