@@ -6,11 +6,8 @@ plugins {
 
 description = "Ion chamber calibration application"
 group 'org.jlab'
-version = '2.0.1'
-
-ext {
-    releaseDate = 'Sep 28 2020'
-}
+version new File("${projectDir}/VERSION").text.trim()
+ext.releaseDate = new Date().format('MMM dd yyyy')
 
 tasks.withType(JavaCompile) {
     options.release = 8
