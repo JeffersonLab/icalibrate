@@ -20,7 +20,7 @@ The iCalibrate application provides operators the ability to perform hall ion ch
 See [User Guide](https://github.com/JeffersonLab/icalibrate/raw/refs/heads/main/doc/iCalibrate%20User%20Guide.docx)
 
 ## Install
-This application requires a Java 8+ JVM and standard library to run.
+This application requires a Java 11+ JVM and standard library to run.
 
 Download from [Releases](https://github.com/JeffersonLab/icalibrate/releases) or [build](https://github.com/JeffersonLab/icalibrate#build) the [distribution](https://github.com/JeffersonLab/icalibrate#release) yourself.
 
@@ -69,7 +69,7 @@ Each of Hall _A_, _C_, and _D_ have one of these properties (Hall A shown):
 | HALLA_CED_NAME_CSV | Comma separated values of CED names for Ion Chambers; only used if NAMES_FROM_CED is false |
 
 ## Build
-This project is built with [Java 17](https://adoptium.net/) (compiled to Java 8 bytecode), and uses the [Gradle 7](https://gradle.org/) build tool to automatically download dependencies and build the project from source:
+This project is built with [Java 17](https://adoptium.net/) (compiled to Java 11 bytecode), and uses the [Gradle 7](https://gradle.org/) build tool to automatically download dependencies and build the project from source:
 
 ```
 git clone https://github.com/JeffersonLab/icalibrate.git
