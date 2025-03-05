@@ -24,7 +24,7 @@ dependencies {
                    'org.jfree:jfreechart:1.0.19',
                    'org.epics:jca:2.4.5',
                    'org.apache.commons:commons-math3:3.6.1',
-                   'org.jlab:jlog:5.0.0'
+                   'org.jlab:jlog:5.1.0'
 
     testImplementation 'junit:junit:4.12'
 }
