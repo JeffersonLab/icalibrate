@@ -92,12 +92,9 @@ gradlew javadoc
 **Note**: The graphical Java Swing forms were built using the [Apache Netbeans](https://netbeans.apache.org/) Matisse builder tool.  It's recommended that graphical component modifications be made using this tool, which modifies the XML `*.form` files.  The XML is used to dyanamically generate Java Swing code.
 
 ## Release
-1. Bump the version number in build.gradle and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).
-1. Run the Gradle distribution target:
-```
-gradlew assembleDist
-```
-3. Create a new release on the GitHub [Releases](https://github.com/JeffersonLab/icalibrate/releases) page corresponding to same version in build.gradle (Enumerate changes and link issues).   Attach the generated distribution zip to the release.
+1. Bump the version number in the VERSION file and commit and push to GitHub (using [Semantic Versioning](https://semver.org/)).
+1. The CD GitHub Action should run automatically invoking:
+     - The Create release GitHub Action to tag the source and create release notes summarizing any pull requests. Edit the release notes to add any missing details. A distribution zip file artifact is attached to the release.
 
 ## Deploy
 At Jefferson Lab the app and all of it's data is stored on the ops network fileystem at `/cs/opshome/IonChambers` and can be launched via JMenu using search keyword `icalibrate`.  Deploying a new version typically looks like (version 2.0.0 shown):
