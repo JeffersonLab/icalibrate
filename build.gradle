@@ -5,20 +5,18 @@ plugins {
 }
 
 description = "Ion chamber calibration application"
-group 'org.jlab'
-version new File("${projectDir}/VERSION").text.trim()
+group = 'org.jlab'
+version = new File("${projectDir}/VERSION").text.trim()
 ext.releaseDate = new Date().format('MMM dd yyyy')
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.release = 11
     options.encoding = 'UTF-8'
     options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
 }
-
 repositories {
     mavenCentral()
 }
-
 dependencies {
     implementation 'org.glassfish:javax.json:1.1.4',
                    'org.jfree:jfreechart:1.0.19',
@@ -28,12 +26,10 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 }
-
 application {
     mainClass.set('org.jlab.icalibrate.ICalibrateApp')
     applicationDefaultJvmArgs = ['-DCAJ_STRIP_HOSTNAME=CAJ_STRIP_HOSTNAME']
 }
-
 startScripts {
     classpath += files('config')
 
@@ -45,11 +41,9 @@ startScripts {
         unixScriptFile.text = unixScriptFile.text.replace('$APP_HOME/lib/config', '$APP_HOME/config')
     }
 }
-
 run {
     classpath += files('config')
 }
-
 distributions {
     main {
         contents {
@@ -59,7 +53,6 @@ distributions {
         }
     }
 }
-
 processResources {
     filesMatching('release.properties') {
         filter {
@@ -70,7 +63,6 @@ processResources {
         }
     }
 }
-
 javadoc {
     options.overview = "src/main/java/overview.html"
     options.source = 8
@@ -78,8 +70,8 @@ javadoc {
         links 'https://docs.oracle.com/javase/8/docs/api/', 'https://www.javadoc.io/doc/org.epics/jca/2.4.5/', 'https://www.javadoc.io/doc/org.epics/caj/1.1.5/', 'http://www.jfree.org/jfreechart/api/javadoc/'
     }
 }
-
-task testRun(type: JavaExec, dependsOn: build) {
+tasks.register('testRun', JavaExec) {
+    dependsOn build
     classpath = files('src/test/resources')
     classpath += sourceSets.main.runtimeClasspath
     classpath += files('config')
