@@ -6,5 +6,16 @@ package org.jlab.icalibrate.model;
  * @author ryans
  */
 public enum Hall {
-    A, C, D
+    /**
+     * Hall A
+     **/
+    A,
+    /**
+     * Hall C
+     */
+    C,
+    /**
+     * Hall D
+     */
+    D
 }

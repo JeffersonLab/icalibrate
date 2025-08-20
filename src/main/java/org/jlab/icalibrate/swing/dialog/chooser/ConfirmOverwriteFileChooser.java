@@ -25,6 +25,13 @@ import org.jlab.icalibrate.swing.util.GenericButtonAreaLayout;
  */
 public class ConfirmOverwriteFileChooser extends JFileChooser {
 
+    /**
+     * Create a new ConfirmOverwriteFileChooser.
+     */
+    public ConfirmOverwriteFileChooser() {
+
+    }
+
     @Override
     public void approveSelection() {
         File selected = getSelectedFile();

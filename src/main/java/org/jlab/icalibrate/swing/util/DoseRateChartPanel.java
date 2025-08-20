@@ -31,6 +31,11 @@ public class DoseRateChartPanel extends JPanel {
     private static final Color ANNOTATION_COLOR = new Color(255, 100, 100, 31);
 
     /**
+     * Create a new DoseRateChartPanel.
+     */
+    public DoseRateChartPanel() {}
+
+    /**
      * Get the selected ChartDataset.
      *
      * @return The ChartDataset
@@ -146,6 +151,11 @@ public class DoseRateChartPanel extends JPanel {
         }
     }
 
+    /**
+     * Get the JFreeChart.
+     *
+     * @return The chart
+     */
     public JFreeChart getChart() {
         return chart;
     }

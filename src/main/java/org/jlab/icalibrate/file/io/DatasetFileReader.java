@@ -28,6 +28,11 @@ public class DatasetFileReader {
             DatasetFileReader.class.getName());
 
     /**
+     * Create a new DatasetFileReader.
+     */
+    public DatasetFileReader() {}
+
+    /**
      * Reads the specified file and returns the HallCalibrationDataset.
      *
      * @param file The HCD file

@@ -45,6 +45,7 @@ public final class ExportEpicsAction extends AbstractAction {
     private final ICalibrateFrame frame;
 
     /**
+     * Create a new ExportEpicsAction.
      *
      * @param frame The ICalibrateFrame
      */

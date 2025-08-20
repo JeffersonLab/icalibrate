@@ -45,6 +45,9 @@ public class CreateNewDatasetWorker extends SwingWorker<List<IonChamberDataset>,
 
     private static final Logger LOGGER = Logger.getLogger(CreateNewDatasetWorker.class.getName());
 
+    /**
+     * The Sample Frequency
+     */
     public static final long SAMPLE_FREQUENCY_MILLIS = 1000;
 
     private final CreateDatasetProgressDialog progressDialog;
@@ -82,18 +85,38 @@ public class CreateNewDatasetWorker extends SwingWorker<List<IonChamberDataset>,
         LOGGER.log(Level.FINEST, "Attenuator Step Magnitude: {0}", params.computeStepSize());
     }
 
+    /**
+     * Set whether an FSD occurred this instant.
+     *
+     * @param fsdTripThisInstant true if an FSD occurred this instant
+     */
     public synchronized void setFsdTripThisInstant(boolean fsdTripThisInstant) {
         this.fsdTripThisInstant = fsdTripThisInstant;
     }
 
+    /**
+     * Get whether an FSD occurred this instant.
+     *
+     * @return true if an FSD occurred this instant
+     */
     public synchronized boolean isFsdTripThisInstant() {
         return fsdTripThisInstant;
     }
 
+    /**
+     * Set whether to an FSD occurred during the step.
+     *
+     * @param fsdTripDuringStep true if an FSD occurred
+     */
     public synchronized void setFsdTripDuringStep(boolean fsdTripDuringStep) {
         this.fsdTripDuringStep = fsdTripDuringStep;
     }
 
+    /**
+     * Get whether an FSD occurred during the step.
+     *
+     * @return true if an FSD occurred
+     */
     public synchronized boolean isFsdTripDuringStep() {
         return fsdTripDuringStep;
     }
@@ -586,8 +609,31 @@ public class CreateNewDatasetWorker extends SwingWorker<List<IonChamberDataset>,
      * The state of the worker.
      */
     public enum WorkerState {
-        SETTLING("Settling"), DWELLING("Dwelling"), SAMPLING("Sampling"), ADJUSTING(
-                "Adjusting Attenuator"), READING("Reading Current"), WAITING_ON_FSD("Waiting on FSD");
+        /**
+         * Settling
+         */
+        SETTLING("Settling"),
+        /**
+         * Dwelling
+         */
+        DWELLING("Dwelling"),
+        /**
+         * Sampling
+         */
+        SAMPLING("Sampling"),
+        /**
+         * Adjusting
+         */
+        ADJUSTING(
+                "Adjusting Attenuator"),
+        /**
+         * Reading
+         */
+        READING("Reading Current"),
+        /**
+         * Waiting on FSD
+         */
+        WAITING_ON_FSD("Waiting on FSD");
         /**
          * The operator friendly text for each state.
          */
@@ -603,10 +649,28 @@ public class CreateNewDatasetWorker extends SwingWorker<List<IonChamberDataset>,
      */
     public class IncrementalResultChunk {
 
+        /**
+         * The state
+         */
         public WorkerState state;
+
+        /**
+         * The step
+         */
+
         public int step;
+        /**
+         * The sample
+         */
         public Integer sample;
 
+        /**
+         * Create a new IncrementalResultChunk.
+         *
+         * @param state The state
+         * @param step The step
+         * @param sample The sample
+         */
         public IncrementalResultChunk(WorkerState state, int step, Integer sample) {
             this.state = state;
             this.step = step;

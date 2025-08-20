@@ -16,7 +16,10 @@ public class EditableDoseRateCellRenderer extends DefaultTableCellRenderer {
 
     private final DecimalFormat formatter = new DecimalFormat("###,##0");
 
-    {
+    /**
+     * Create a new EditableDoseRateCellRenderer.
+     */
+    public EditableDoseRateCellRenderer() {
         this.setHorizontalAlignment(JLabel.RIGHT);
     }
 

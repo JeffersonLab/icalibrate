@@ -17,7 +17,12 @@ public class DoseRateTableModel extends AbstractTableModel {
     private final List<String> columnNames = Arrays.asList("<html><center>Current<br/>(microAmps)</center></html>",
             "<html><center>Dose Rate<br/>(rads/hr)</center></html>");
     List<DoseRateMeasurement> rows = new ArrayList<>();
-    
+
+    /**
+     * Create a new DoseRateTableModel.
+     */
+    public DoseRateTableModel() {}
+
     /**
      * Return the ordered set of rows.
      *
@@ -29,6 +34,11 @@ public class DoseRateTableModel extends AbstractTableModel {
         return new LinkedHashSet<>(rows);
     }
 
+    /**
+     * Set the current units.
+     *
+     * @param units The units
+     */
     public void setCurrentUnits(String units) {
         columnNames.set(0, "<html><center>Current<br/>(" + units + ")</center></html>");
         fireTableStructureChanged(); // This undoes all of the cell sizing and cell renderer config!

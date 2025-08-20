@@ -7,6 +7,7 @@ import org.jlab.icalibrate.exception.ValidationException;
  * A Swing GUI wizard dialog page.
  *
  * @author ryans
+ * @param <T> The Type
  */
 public abstract class WizardPage<T> extends JPanel {
 

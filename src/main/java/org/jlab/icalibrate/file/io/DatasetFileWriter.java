@@ -22,6 +22,11 @@ import org.jlab.icalibrate.model.IonChamberDataset;
 public class DatasetFileWriter {
 
     /**
+     * Create a new DatasetFileWriter.
+     */
+    public DatasetFileWriter() {}
+
+    /**
      * Writes the HallCalibrationDataset to the specified file.
      *
      * @param file The file to write to

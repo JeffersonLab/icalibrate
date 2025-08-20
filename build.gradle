@@ -65,9 +65,9 @@ processResources {
 }
 javadoc {
     options.overview = "src/main/java/overview.html"
-    options.source = 8
+    options.source = 11
     options.with {
-        links 'https://docs.oracle.com/javase/8/docs/api/', 'https://www.javadoc.io/doc/org.epics/jca/2.4.5/', 'https://www.javadoc.io/doc/org.epics/caj/1.1.5/', 'http://www.jfree.org/jfreechart/api/javadoc/'
+        links 'https://docs.oracle.com/en/java/javase/11/docs/api/', 'https://www.javadoc.io/doc/org.epics/jca/2.4.5/', 'https://www.javadoc.io/doc/org.epics/caj/1.1.5/', 'https://www.jfree.org/jfreechart/api/javadoc/'
     }
 }
 tasks.register('testRun', JavaExec) {

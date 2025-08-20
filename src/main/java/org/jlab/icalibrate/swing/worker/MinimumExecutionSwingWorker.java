@@ -74,5 +74,11 @@ public abstract class MinimumExecutionSwingWorker<T, V> extends SwingWorker<T, V
         return result;
     }
 
+    /**
+     * Perform an action with a minimum amount of wall-clock time elapsed to avoid a flickering progress display.
+     *
+     * @return A Type
+     * @throws Exception If unable to execute
+     */
     protected abstract T doWithMinimumExecution() throws Exception;
 }

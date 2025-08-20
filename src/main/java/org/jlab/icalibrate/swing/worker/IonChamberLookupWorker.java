@@ -24,6 +24,12 @@ public class IonChamberLookupWorker extends MinimumExecutionSwingWorker<List<Ion
     private final Wizard<CreateNewDatasetParameters> wizard;
     private final IonChamberPage page;
 
+    /**
+     * Create a new IonChamberLookupWorker.
+     *
+     * @param wizard The wizard
+     * @param page The page
+     */
     public IonChamberLookupWorker(Wizard<CreateNewDatasetParameters> wizard, IonChamberPage page) {
         this.wizard = wizard;
         this.page = page;

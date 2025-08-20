@@ -227,6 +227,11 @@ public class ChartDataset {
         return maxIndex;
     }
 
+    /**
+     * Return the fit equation.
+     *
+     * @return The equation
+     */
     public String getFitEquation() {
         String equation;
 
