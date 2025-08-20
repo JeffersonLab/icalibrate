@@ -42,6 +42,9 @@ public final class ExportEpicsAction extends AbstractAction {
 
     private static final Logger LOGGER = Logger.getLogger(ExportSnapAction.class.getName());
 
+    /**
+     * The frame.
+     */
     private final ICalibrateFrame frame;
 
     /**

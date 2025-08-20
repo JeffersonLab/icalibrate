@@ -11,6 +11,11 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class UnselectableCellRenderer extends DefaultTableCellRenderer {
 
+    /**
+     * Create a new UnselectableCellRenderer.
+     */
+    public UnselectableCellRenderer() {}
+
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value,
             boolean isSelected, boolean hasFocus, int row, int column) {

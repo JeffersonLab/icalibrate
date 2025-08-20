@@ -15,6 +15,10 @@ public class UnselectableDoseRateCellRenderer extends UnselectableCellRenderer {
 
     private final DecimalFormat formatter = new DecimalFormat("###,##0");
 
+    /**
+     * Create a new UnselectableDoseRateCellRenderer.
+     */
+    public UnselectableDoseRateCellRenderer()
     {
         this.setHorizontalAlignment(JLabel.RIGHT);
     }

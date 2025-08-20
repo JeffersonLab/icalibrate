@@ -20,7 +20,11 @@ import javax.swing.SwingWorker;
  */
 public abstract class MinimumExecutionSwingWorker<T, V> extends SwingWorker<T, V> {
 
+    /**
+     * The minimum number of milliseconds to execute.
+     */
     public static final long DEFAULT_MIN_MILLISECONDS = 750L;
+
     private final long minimumMilliseconds;
     private final Object waitLock = new Object();
     private boolean minimumElapsed = false;

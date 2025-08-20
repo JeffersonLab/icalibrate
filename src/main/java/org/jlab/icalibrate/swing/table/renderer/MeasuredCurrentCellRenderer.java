@@ -16,6 +16,10 @@ public class MeasuredCurrentCellRenderer extends DefaultTableCellRenderer {
 
     private final DecimalFormat formatter = new DecimalFormat("###,###,##0.00");
 
+    /**
+     * Create a new MeasuredCurrentCellRenderer.
+     */
+    public MeasuredCurrentCellRenderer()
     {
         this.setHorizontalAlignment(JLabel.RIGHT);
     }

@@ -12,9 +12,21 @@ import org.jlab.icalibrate.swing.util.FrostedGlassPane;
  * @author ryans
  */
 public class ModalWaitFrame extends JFrame {
+
+    /**
+     * The frosted pane.
+     */
     private final FrostedGlassPane frostedPane = new FrostedGlassPane();
+
+    /**
+     * The wait dialog.
+     */
     private final WaitDialog waitDialog = new WaitDialog(this);
 
+    /**
+     * Create a new ModalWaitFrame.
+     */
+    public ModalWaitFrame()
     {
         setGlassPane(frostedPane);    
     }

@@ -18,6 +18,11 @@ import org.jlab.icalibrate.model.DoseRateTripSetpoint;
 public class SnapFileWriter {
 
     /**
+     * Create a new SnapFileWriter.
+     */
+    public SnapFileWriter() {}
+
+    /**
      * Write the list of DoseRateTripSetpoints to the specified SNAP file.
      * 
      * @param file The SNAP file

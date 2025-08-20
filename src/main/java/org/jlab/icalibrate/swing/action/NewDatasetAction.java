@@ -22,11 +22,23 @@ public final class NewDatasetAction extends AbstractAction {
 
     private static final Logger LOGGER = Logger.getLogger(NewDatasetAction.class.getName());
 
+    /**
+     * The frame.
+     */
     private final ICalibrateFrame frame;
+
+    /**
+     * The params.
+     */
     private final CreateNewDatasetParameters params;
+
+    /**
+     * The progress dialog.
+     */
     private final CreateDatasetProgressDialog progressDialog;
 
     /**
+     * Create a new NewDatasetAction.
      *
      * @param frame The ICalibrateFrame
      * @param progressDialog The progress dialog

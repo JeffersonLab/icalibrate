@@ -14,8 +14,19 @@ import org.jlab.icalibrate.swing.util.DoseRateChartPanel;
  */
 public class OpenModifyDataDialogAction extends AbstractAction {
 
+    /**
+     * The chart panel.
+     */
     private final DoseRateChartPanel chartPanel;
+
+    /**
+     * The dose rate dialog.
+     */
     private final ModifySampleDataDialog modifyDoseRateDialog;
+
+    /**
+     * The frame.
+     */
     private final ICalibrateFrame frame;
 
     /**

@@ -158,6 +158,11 @@ public class IonChamberPage extends WizardPage<CreateNewDatasetParameters> {
         setIonChambers(new ArrayList<>());
     }
 
+    /**
+     * Set the ion chamber list.
+     *
+     * @param icList The list
+     */
     public void setIonChambers(List<IonChamber> icList) {
         // Sort alphabetically by friendly name, then EPICS name
         Collections.sort(icList);

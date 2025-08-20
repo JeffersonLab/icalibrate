@@ -21,6 +21,11 @@ public class SetpointTableModel extends AbstractTableModel {
     private List<SetpointRow> rows = new ArrayList<>();
     private boolean editable = true;
 
+    /**
+     * Create a new SetpointTableModel.
+     *
+     * @param editable true if editable
+     */
     public SetpointTableModel(boolean editable) {
         this.editable = editable;
     }
@@ -175,6 +180,9 @@ public class SetpointTableModel extends AbstractTableModel {
         }
     }
 
+    /**
+     * Set all rows to logarithmic.
+     */
     public void setLogAll() {
         for (int i = 0; i < rows.size(); i++) {
             SetpointRow row = rows.get(i);

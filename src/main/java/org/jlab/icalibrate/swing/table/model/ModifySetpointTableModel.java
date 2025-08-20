@@ -22,6 +22,11 @@ public class ModifySetpointTableModel extends AbstractTableModel {
     private List<ModifySetpointRow> rows = new ArrayList<>();
 
     /**
+     * Create a new ModifySetpointTableModel.
+     */
+    public ModifySetpointTableModel() {}
+
+    /**
      * Return the ordered set of rows.
      *
      * @return The list of rows

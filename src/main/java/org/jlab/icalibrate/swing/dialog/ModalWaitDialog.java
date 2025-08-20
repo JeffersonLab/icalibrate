@@ -20,6 +20,12 @@ public class ModalWaitDialog extends JDialog {
         setGlassPane(frostedPane);
     }
 
+    /**
+     * Create a new ModalWaitDialog.
+     *
+     * @param owner The owner Frame
+     * @param modal true if modal
+     */
     public ModalWaitDialog(Frame owner, boolean modal) {
         super(owner, modal);
     }

@@ -237,7 +237,12 @@ public class LaserTargetBeamPage extends WizardPage<CreateNewDatasetParameters> 
         noteInput.setText("");
         beamCurrentLabel.setText("Unknown");
     }
-    
+
+    /**
+     * Set the laser.
+     *
+     * @param laser The laser
+     */
     public void setLaser(Laser laser) {
         if (laser != null) {
             laserLabel.setText(laser.name());
@@ -245,15 +250,30 @@ public class LaserTargetBeamPage extends WizardPage<CreateNewDatasetParameters> 
             laserLabel.setText("Unknown");
         }
     }
-    
+
+    /**
+     * Set target.
+     *
+     * @param target The target
+     */
     public void setTarget(String target) {
         targetInput.setText(target);
     }
-    
+
+    /**
+     * Set pass.
+     *
+     * @param pass The pass
+     */
     public void setPass(String pass) {
         passInput.setText(pass);
     }
-    
+
+    /**
+     * Set beam established.
+     *
+     * @param beamEstablished The beam established value
+     */
     public void setBeamEstablished(String beamEstablished) {
         beamCurrentLabel.setText(beamEstablished);
     }

@@ -18,6 +18,11 @@ public class ModifyDataTableModel extends AbstractTableModel {
     private List<ModifyDoseRateRow> rows = new ArrayList<>();
 
     /**
+     * Create a new ModifyTableModel.
+     */
+    public ModifyDataTableModel() {}
+
+    /**
      * Return the ordered set of rows.
      *
      * @return The list of rows

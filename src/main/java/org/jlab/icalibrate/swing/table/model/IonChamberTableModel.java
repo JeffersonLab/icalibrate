@@ -20,6 +20,11 @@ public class IonChamberTableModel extends AbstractTableModel {
     private List<IonChamberRow> rows = new ArrayList<>();
 
     /**
+     * Create a new IonChamberTableModel.
+     */
+    public IonChamberTableModel() {}
+
+    /**
      * Return the ordered set of rows.
      *
      * @return The list of rows

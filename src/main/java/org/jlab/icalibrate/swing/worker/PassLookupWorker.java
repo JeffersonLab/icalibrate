@@ -32,6 +32,13 @@ public class PassLookupWorker extends MinimumExecutionSwingWorker<String, Void> 
     private final LaserTargetBeamPage page;
     private final CountDownLatch doneLatch;
 
+    /**
+     * Create a new PassLookupWorker.
+     *
+     * @param wizard The wizard
+     * @param page The page
+     * @param doneLatch The latch
+     */
     public PassLookupWorker(Wizard<CreateNewDatasetParameters> wizard, LaserTargetBeamPage page,
             CountDownLatch doneLatch) {
         this.wizard = wizard;

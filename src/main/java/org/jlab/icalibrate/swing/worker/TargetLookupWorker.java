@@ -33,6 +33,13 @@ public class TargetLookupWorker extends MinimumExecutionSwingWorker<String, Void
     private final LaserTargetBeamPage page;
     private final CountDownLatch doneLatch;
 
+    /**
+     * Create a new TargetLookupWorker.
+     *
+     * @param wizard The wizard
+     * @param page The page
+     * @param doneLatch The latch
+     */
     public TargetLookupWorker(Wizard<CreateNewDatasetParameters> wizard, LaserTargetBeamPage page,
             CountDownLatch doneLatch) {
         this.wizard = wizard;
