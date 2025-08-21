@@ -4,7 +4,6 @@ import java.text.DecimalFormat;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 import org.jfree.data.function.Function2D;
 import org.jfree.data.function.LineFunction2D;
-import org.jfree.data.statistics.Regression;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
@@ -91,39 +90,6 @@ public class ChartDataset {
     series = new XYSeries("Setpoint");
     series.add(x, y);
     seriesData.addSeries(series);
-  }
-
-  /**
-   * Update parameters defining the extent (range) of the dataset to fit.
-   *
-   * @param min The minimum dataset index (inclusive)
-   * @param max The maximum dataset index (inclusive)
-   */
-  public void updateFitParameters(int min, int max) {
-    // System.out.println("updateFitParams: min: " + min);
-    // System.out.println("updateFitParams: max: " + max);
-
-    this.minIndex = min;
-    this.maxIndex = max;
-
-    XYSeries fitSubset;
-    XYSeriesCollection tmp = new XYSeriesCollection();
-    try {
-      fitSubset = seriesData.getSeries(0).createCopy(minIndex, maxIndex);
-      fitSubset.setKey("Subset");
-      tmp.addSeries(fitSubset);
-    } catch (CloneNotSupportedException e) {
-      throw new RuntimeException("Series Subsets Not Supported", e);
-    }
-
-    if (fitSubset.getItemCount() > 1) {
-      double[] regressionParameters = Regression.getOLSRegression(tmp, 0);
-
-      double yIntercept = regressionParameters[0];
-      double slope = regressionParameters[1];
-
-      linearFit = new LineFunction2D(yIntercept, slope);
-    }
   }
 
   /**

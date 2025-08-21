@@ -11,7 +11,7 @@ import org.jfree.chart.annotations.XYShapeAnnotation;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.function.Function2D;
-import org.jfree.data.general.DatasetUtilities;
+import org.jfree.data.general.DatasetUtils;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jlab.icalibrate.model.ChartDataset;
@@ -124,7 +124,7 @@ public class DoseRateChartPanel extends JPanel {
       func = dataset.getLinearFit();
     }
 
-    fitData = DatasetUtilities.sampleFunction2D(func, minX, maxX, 100, fitLabel);
+    fitData = DatasetUtils.sampleFunction2D(func, minX, maxX, 100, fitLabel);
 
     this.chart.getXYPlot().setDataset(1, fitData);
     XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer(true, false);

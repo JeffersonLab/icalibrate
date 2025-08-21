@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
 import org.jlab.icalibrate.ICalibrateApp;
 import org.jlab.icalibrate.IOUtil;
@@ -118,7 +118,7 @@ public final class ExportElogActionListener implements ActionListener {
             tmp = File.createTempFile(caption, ".png");
             tmpList.add(tmp);
             FileOutputStream out = new FileOutputStream(tmp);
-            ChartUtilities.writeChartAsPNG(out, chart, 400, 300);
+            ChartUtils.writeChartAsPNG(out, chart, 400, 300);
             entry.addAttachment(tmp.getCanonicalPath(), "");
 
             Double controlSystemSetpoint = frame.getControlSystemSetpoint(figureCount - 1);
