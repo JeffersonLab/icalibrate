@@ -1,34 +1,6 @@
 # /cs/op/iocs/iocin4/epicsV/db/overview.db
 record(ao,"ISD0I011G") {
 }
-# /cs/op/iocs/iocin1/gunpV/db/guncontrol.db
-record(bo, "MMSHLALASERA") {
-  field(DTYP, "Soft Channel")
-  field(DOL, "0.000000000000000e+00")
-  field(FLNK, "0.000000")
-  field(OUT, "0.000000000000000e+00")
-  field(SDIS, "0.000000000000000e+00")
-  field(ASG, "DEFAULT")
-  field(COSV, "NO_ALARM")
-  field(DESC, "binary output record")
-  field(DISS, "NO_ALARM")
-  field(EVNT, "0")
-  field(HIGH, "0.000000")
-  field(IVOA, "Continue normally")
-  field(IVOV, "0")
-  field(OMSL, "supervisory")
-  field(ONAM, "enabled")
-  field(OSV, "NO_ALARM")
-  field(PHAS, "0")
-  field(PINI, "NO")
-  field(PRIO, "LOW")
-  field(SCAN, "Passive")
-  field(SIML, "0.000000000000000e+00")
-  field(SIMS, "NO_ALARM")
-  field(SIOL, "0.000000000000000e+00")
-  field(ZNAM, "disabled")
-  field(ZSV, "NO_ALARM")
-}
 # /cs/op/iocs/iocbcm/blaV/db/blabcm.db
 record(ai, "IBC1H04CRCUR2") {
   field(INP, "#C1 S2 @MES")
