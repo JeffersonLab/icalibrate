@@ -145,3 +145,16 @@ record(ai, "IBCAD00CRCUR6") {
   field(SIOL, "0.000000000000000e+00")
   field(SMOO, "0.0000000e+00")
 }
+# /cs/op/iocs/ioceegstep1/Rf12StepPsubV/db/Rf12StepPsub.db
+record(ao,"psub_aa_ipos") {
+        field(DTYP,"Soft Channel")
+}
+record(ao,"psub_ab_ipos") {
+        field(DTYP,"Soft Channel")
+}
+record(ao,"psub_ac_ipos") {
+        field(DTYP,"Soft Channel")
+}
+record(ao,"psub_ad_ipos") {
+        field(DTYP,"Soft Channel")
+}
