@@ -24,10 +24,21 @@ import org.jlab.icalibrate.model.ChartDataset;
  */
 public class DoseRateChartPanel extends JPanel {
 
-    private ChartPanel chartPanel;
+    /**
+     * The chart.
+     */
     private JFreeChart chart;
+
+    /**
+     * The dataset.
+     */
     private ChartDataset dataset;
+
+    /**
+     * The annotation.
+     */
     private XYShapeAnnotation annotation;
+
     private static final Color ANNOTATION_COLOR = new Color(255, 100, 100, 31);
 
     /**
@@ -69,7 +80,7 @@ public class DoseRateChartPanel extends JPanel {
             );
             this.chart.getXYPlot().getRangeAxis().setAutoRangeMinimumSize(2.0);
 
-            this.chartPanel = new ChartPanel(this.chart);
+            ChartPanel chartPanel = new ChartPanel(this.chart);
             this.setLayout(new BorderLayout());
             this.add(chartPanel, BorderLayout.CENTER);
 

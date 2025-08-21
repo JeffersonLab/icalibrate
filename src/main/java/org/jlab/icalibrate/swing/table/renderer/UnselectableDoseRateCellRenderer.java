@@ -13,6 +13,9 @@ import javax.swing.JTable;
  */
 public class UnselectableDoseRateCellRenderer extends UnselectableCellRenderer {
 
+    /**
+     * The formatter.
+     */
     private final DecimalFormat formatter = new DecimalFormat("###,##0");
 
     /**

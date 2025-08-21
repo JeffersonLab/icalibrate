@@ -13,7 +13,13 @@ import javax.swing.text.DefaultStyledDocument;
  */
 public class SizeRestrictedDocument extends DefaultStyledDocument {
 
+    /**
+     * The pattern.
+     */
     private final Pattern pattern;
+    /**
+     * The max size.
+     */
     private final int max;
 
     /**

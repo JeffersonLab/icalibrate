@@ -14,9 +14,15 @@ import org.jlab.icalibrate.model.IonChamber;
  */
 public class IonChamberTableModel extends AbstractTableModel {
 
+    /**
+     * The column names list.
+     */
     private final List<String> columnNames = Arrays.asList("Name",
             "EPICS Name",
             "Include");
+    /**
+     * The rows.
+     */
     private List<IonChamberRow> rows = new ArrayList<>();
 
     /**

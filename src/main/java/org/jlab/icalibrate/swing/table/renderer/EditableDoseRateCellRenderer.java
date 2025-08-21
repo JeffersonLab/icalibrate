@@ -14,6 +14,9 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class EditableDoseRateCellRenderer extends DefaultTableCellRenderer {
 
+    /**
+     * The formatter.
+     */
     private final DecimalFormat formatter = new DecimalFormat("###,##0");
 
     /**

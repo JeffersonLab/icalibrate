@@ -89,7 +89,7 @@ public class ICalibrateFrame extends ModalWaitFrame implements PvListener {
             = new ChooseAndModifySetpointDialog(this);
     private final CreateDatasetProgressDialog progressDialog = new CreateDatasetProgressDialog(this);
 
-    private final SetpointTableModel setpointTableModel = new SetpointTableModel(false);
+    private final SetpointTableModel setpointTableModel = new SetpointTableModel();
     private final DoseRateTableModel doseRateTableModel = new DoseRateTableModel();
     private final DoseRateChartPanel chartPanel = new DoseRateChartPanel();
     private HallCalibrationDataset dataset = null;

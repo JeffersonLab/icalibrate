@@ -40,9 +40,19 @@ import javax.swing.SwingConstants;
  */
 public class GenericButtonAreaLayout implements LayoutManager {
 
+    /**
+     * The top margin.
+     */
     private final int topMargin = 17;
 
+    /**
+     * Whether to sync all widths.
+     */
     protected boolean syncAllWidths;
+
+    /**
+     * The padding.
+     */
     protected int padding;
     /**
      * If true, children are lumped together in parent.
@@ -56,6 +66,12 @@ public class GenericButtonAreaLayout implements LayoutManager {
      */
     private boolean useOrientation;
 
+    /**
+     * Create a new GenericButtonAreaLayout.
+     *
+     * @param syncAllWidths Whether to sync all widths
+     * @param padding The padding
+     */
     public GenericButtonAreaLayout(boolean syncAllWidths, int padding) {
         this.syncAllWidths = syncAllWidths;
         this.padding = padding;
@@ -63,6 +79,14 @@ public class GenericButtonAreaLayout implements LayoutManager {
         useOrientation = false;
     }
 
+    /**
+     * Create a new GenericButtonAreaLayout.
+     *
+     * @param syncAllSizes Whether to sync all sizes
+     * @param padding The padding
+     * @param orientation The orientation
+     * @param reverseButtons Whether to reverse buttons
+     */
     public GenericButtonAreaLayout(boolean syncAllSizes, int padding, int orientation,
             boolean reverseButtons) {
         this(syncAllSizes, padding);
@@ -71,27 +95,20 @@ public class GenericButtonAreaLayout implements LayoutManager {
         this.reverseButtons = reverseButtons;
     }
 
-    public void setSyncAllWidths(boolean newValue) {
-        syncAllWidths = newValue;
-    }
-
+    /**
+     * Get whether to sync all widths.
+     *
+     * @return true if synced
+     */
     public boolean getSyncAllWidths() {
         return syncAllWidths;
     }
 
-    public void setPadding(int newPadding) {
-        this.padding = newPadding;
-    }
-
-    public int getPadding() {
-        return padding;
-    }
-
-    public void setCentersChildren(boolean newValue) {
-        centersChildren = newValue;
-        useOrientation = false;
-    }
-
+    /**
+     * Get whether children are centered.
+     *
+     * @return true if centered
+     */
     public boolean getCentersChildren() {
         return centersChildren;
     }
