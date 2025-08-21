@@ -226,3 +226,9 @@ record(mbbi, "MMSHL$(HALL)PASS") {
   field(ZRSV, "NO_ALARM")
   field(ZRVL, "0")
 }
+# opsbat4
+record(stringout,"HALL_$(HALL)_TARGET") {
+    field(PINI,"YES")
+    field(DTYP,"Soft Channel")
+    field(VAL,"Test Target!")
+}

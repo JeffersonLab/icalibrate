@@ -76,10 +76,9 @@ tasks.register('testRun', JavaExec) {
     dependsOn build
     classpath = files('src/test/resources')
     classpath += sourceSets.main.runtimeClasspath
-    classpath += files('config')
     mainClass.set('org.jlab.icalibrate.ICalibrateApp')
     systemProperties = [
-            'java.util.logging.config.file': 'config/debug-logging.properties'
+            'java.util.logging.config.file': 'logging.properties'
     ]
 }
 spotless {
