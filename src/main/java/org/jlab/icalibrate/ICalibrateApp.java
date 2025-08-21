@@ -143,8 +143,10 @@ public class ICalibrateApp {
 
       RELEASE_PROPERTIES.load(releaseStream);
 
-      // java.util.logging configuration defaults to $JAVA_HOME/lib/logging.properties and is overridden by the
-      // system property -Djava.util.logging.config.file, but this does NOT search the classpath.  So we leverage
+      // java.util.logging configuration defaults to $JAVA_HOME/lib/logging.properties and is
+      // overridden by the
+      // system property -Djava.util.logging.config.file, but this does NOT search the classpath.
+      // So we leverage
       // the classpath search ourselves and manually configure here
       LogManager.getLogManager().readConfiguration(loggingStream);
 

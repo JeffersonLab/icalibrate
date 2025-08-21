@@ -81,7 +81,6 @@ tasks.register('testRun', JavaExec) {
     classpath += sourceSets.main.runtimeClasspath
     mainClass.set('org.jlab.icalibrate.ICalibrateApp')
     systemProperties = [
-            "java.util.logging.config.file": "${projectDir}/src/test/resources/logging.properties",
             "sun.java2d.opengl": "True",
             "sun.java2d.d3d": "true"
     ]
