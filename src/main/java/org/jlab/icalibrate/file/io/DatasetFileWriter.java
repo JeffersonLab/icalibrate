@@ -1,14 +1,15 @@
 package org.jlab.icalibrate.file.io;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.PosixFilePermission;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jlab.icalibrate.model.DoseRateMeasurement;
 import org.jlab.icalibrate.model.Hall;
 import org.jlab.icalibrate.model.HallCalibrationDataset;
@@ -20,6 +21,8 @@ import org.jlab.icalibrate.model.IonChamberDataset;
  * @author ryans
  */
 public class DatasetFileWriter {
+
+  private static final Logger LOGGER = Logger.getLogger(DatasetFileWriter.class.getName());
 
   /** Create a new DatasetFileWriter. */
   public DatasetFileWriter() {}
@@ -44,6 +47,21 @@ public class DatasetFileWriter {
           dataset.getCalibratedDate(),
           dataset.getCalibratedBy());
       writeBodyIndependentICs(writer, dataset.getMeasuredDoseRateDataset());
+    }
+
+    Set<PosixFilePermission> perms = new HashSet<>();
+    perms.add(PosixFilePermission.OWNER_READ);
+    perms.add(PosixFilePermission.OWNER_WRITE);
+    perms.add(PosixFilePermission.GROUP_READ);
+    perms.add(PosixFilePermission.GROUP_WRITE);
+    perms.add(PosixFilePermission.OTHERS_READ);
+
+    Path filePath = Paths.get(file.getPath());
+
+    try {
+      Files.setPosixFilePermissions(filePath, perms);
+    } catch (UnsupportedOperationException | IOException e) {
+      LOGGER.log(Level.WARNING, "Could not set UNIX permissions for file " + file.getPath(), e);
     }
   }
 
