@@ -171,7 +171,6 @@ record(mbbo, "IGL1I00HALL$(HALL)MODE") {
 # /cs/op/iocs/iocmc1/mmsV/db/mmsmc1.db
 record(mbbi, "MMSHL$(HALL)PASS") {
   field(DTYP, "Soft Channel")
-  field(FLNK, "MMSMUX1.VAL")
   field(INP, "0.000000000000000e+00")
   field(SDIS, "0.000000000000000e+00")
   field(ASG, "DEFAULT")
