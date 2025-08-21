@@ -1,0 +1,6 @@
+# /cs/op/iocs/iocmc1/overviewV/db/overview.db
+record(stringout,"ISD0I011G") {
+    field(PINI,"YES")
+    field(DTYP,"Soft Channel")
+    field(VAL,"")
+}
