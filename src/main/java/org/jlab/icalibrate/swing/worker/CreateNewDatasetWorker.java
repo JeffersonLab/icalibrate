@@ -25,8 +25,8 @@ import org.jlab.icalibrate.model.HallCalibrationDataset;
 import org.jlab.icalibrate.model.IonChamber;
 import org.jlab.icalibrate.model.IonChamberDataset;
 import org.jlab.icalibrate.model.CreateNewDatasetParameters;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
-import org.jlab.icalibrate.swing.dialog.CreateDatasetProgressDialog;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.dialog.CreateDatasetProgressDialog;
 import org.jlab.icalibrate.swing.worker.CreateNewDatasetWorker.IncrementalResultChunk;
 
 /**

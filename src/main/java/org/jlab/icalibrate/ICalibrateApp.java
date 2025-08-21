@@ -14,8 +14,8 @@ import org.jlab.icalibrate.exception.InitializationException;
 import org.jlab.icalibrate.exception.MissingDataException;
 import org.jlab.icalibrate.file.io.DatasetFileReader;
 import org.jlab.icalibrate.model.HallCalibrationDataset;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
-import org.jlab.icalibrate.swing.MaydayFrame;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.MaydayFrame;
 
 /**
  * The entry point of the ion chamber calibration application.  The application measures dose rates of ion chambers at

@@ -1,10 +1,10 @@
-package org.jlab.icalibrate.wizard.page;
+package org.jlab.icalibrate.swing.generated.wizard.page;
 
 import org.jlab.icalibrate.exception.ValidationException;
 import org.jlab.icalibrate.model.Hall;
 import org.jlab.icalibrate.model.CreateNewDatasetParameters;
-import org.jlab.icalibrate.wizard.Wizard;
-import org.jlab.icalibrate.wizard.WizardPage;
+import org.jlab.icalibrate.swing.generated.wizard.Wizard;
+import org.jlab.icalibrate.swing.generated.wizard.WizardPage;
 
 /**
  * Prompts the operator to choose a hall, attenuator ramping options, and sampling options.

@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.wizard;
+package org.jlab.icalibrate.swing.generated.wizard;
 
 import javax.swing.JPanel;
 import org.jlab.icalibrate.exception.ValidationException;

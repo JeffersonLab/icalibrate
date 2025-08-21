@@ -21,7 +21,7 @@ import org.jlab.icalibrate.IOUtil;
 import org.jlab.icalibrate.model.ChartDataset;
 import org.jlab.icalibrate.model.DoseRateMeasurement;
 import org.jlab.icalibrate.model.HallCalibrationDataset;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
 import org.jlab.icalibrate.swing.util.DoseRateChartPanel;
 import org.jlab.icalibrate.swing.util.HyperLinkEnabledMessage;
 import org.jlab.icalibrate.swing.worker.MinimumExecutionSwingWorker;

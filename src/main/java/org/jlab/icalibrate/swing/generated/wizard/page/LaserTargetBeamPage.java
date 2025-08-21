@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.wizard.page;
+package org.jlab.icalibrate.swing.generated.wizard.page;
 
 import java.util.concurrent.CountDownLatch;
 import javax.swing.SwingWorker;
@@ -10,8 +10,8 @@ import org.jlab.icalibrate.swing.worker.BeamEstablishedLookupWorker;
 import org.jlab.icalibrate.swing.worker.LaserLookupWorker;
 import org.jlab.icalibrate.swing.worker.PassLookupWorker;
 import org.jlab.icalibrate.swing.worker.TargetLookupWorker;
-import org.jlab.icalibrate.wizard.Wizard;
-import org.jlab.icalibrate.wizard.WizardPage;
+import org.jlab.icalibrate.swing.generated.wizard.Wizard;
+import org.jlab.icalibrate.swing.generated.wizard.WizardPage;
 
 /**
  * Prompts the operator to confirm the laser and target as well as confirm beam has been established

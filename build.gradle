@@ -64,6 +64,7 @@ processResources {
     }
 }
 javadoc {
+    exclude 'org/jlab/icalibrate/swing/generated/**'
     options.overview = "src/main/java/overview.html"
     options.source = 11
     options.with {

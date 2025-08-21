@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.wizard;
+package org.jlab.icalibrate.swing.generated.wizard;
 
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -11,7 +11,7 @@ import javax.swing.Action;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import org.jlab.icalibrate.exception.ValidationException;
-import org.jlab.icalibrate.swing.dialog.ModalWaitDialog;
+import org.jlab.icalibrate.swing.ModalWaitDialog;
 
 /**
  * A Swing GUI wizard dialog.

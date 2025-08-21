@@ -14,8 +14,8 @@ import org.jlab.icalibrate.epics.ChannelManager;
 import org.jlab.icalibrate.exception.AppException;
 import org.jlab.icalibrate.model.Hall;
 import org.jlab.icalibrate.model.CreateNewDatasetParameters;
-import org.jlab.icalibrate.wizard.Wizard;
-import org.jlab.icalibrate.wizard.page.LaserTargetBeamPage;
+import org.jlab.icalibrate.swing.generated.wizard.Wizard;
+import org.jlab.icalibrate.swing.generated.wizard.page.LaserTargetBeamPage;
 
 /**
  * This is a SwingWorker which verifies that beam has been established to the selected hall by

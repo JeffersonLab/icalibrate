@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.jlab.icalibrate.ICalibrateApp;
 import org.jlab.icalibrate.file.io.DatasetFileWriter;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
-import org.jlab.icalibrate.swing.dialog.chooser.ConfirmOverwriteFileChooser;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
+import org.jlab.icalibrate.swing.chooser.ConfirmOverwriteFileChooser;
 
 /**
  * Handle an action request that first requires saving a Hall Calibration Data file before

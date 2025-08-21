@@ -3,9 +3,9 @@ package org.jlab.icalibrate.swing.action.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Logger;
-import org.jlab.icalibrate.model.HallCalibrationDataset;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
-import org.jlab.icalibrate.swing.dialog.ModifySampleDataDialog;
+
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.dialog.ModifySampleDataDialog;
 
 /**
  * Handle a save modified sample data request.

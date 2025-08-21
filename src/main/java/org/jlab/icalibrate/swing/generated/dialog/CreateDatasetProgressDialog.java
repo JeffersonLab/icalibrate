@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.swing.dialog;
+package org.jlab.icalibrate.swing.generated.dialog;
 
 import java.awt.Frame;
 import javax.swing.JOptionPane;

@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
 
 /**
  * Handle an action request that first requires checking if unsaved data exists and if so prompts

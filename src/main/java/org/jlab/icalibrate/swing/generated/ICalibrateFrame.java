@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.swing;
+package org.jlab.icalibrate.swing.generated;
 
 import gov.aps.jca.dbr.DBR;
 import gov.aps.jca.dbr.DBRType;
@@ -42,6 +42,7 @@ import org.jlab.icalibrate.model.IonChamber;
 import org.jlab.icalibrate.model.IonChamberDataset;
 import org.jlab.icalibrate.model.CreateNewDatasetParameters;
 import org.jlab.icalibrate.model.DoseRateMeasurement;
+import org.jlab.icalibrate.swing.ModalWaitFrame;
 import org.jlab.icalibrate.swing.action.ExportEpicsAction;
 import org.jlab.icalibrate.swing.action.ExportSnapAction;
 import org.jlab.icalibrate.swing.action.NewDatasetAction;
@@ -50,10 +51,10 @@ import org.jlab.icalibrate.swing.action.listener.ExportElogActionListener;
 import org.jlab.icalibrate.swing.action.listener.OpenHCDActionListener;
 import org.jlab.icalibrate.swing.action.listener.PromptUnsavedThenContinueActionListener;
 import org.jlab.icalibrate.swing.action.listener.SaveHCDThenContinueActionListener;
-import org.jlab.icalibrate.swing.dialog.HelpDialog;
-import org.jlab.icalibrate.swing.dialog.CreateDatasetProgressDialog;
-import org.jlab.icalibrate.swing.dialog.ChooseAndModifySetpointDialog;
-import org.jlab.icalibrate.swing.dialog.ModifySampleDataDialog;
+import org.jlab.icalibrate.swing.generated.dialog.HelpDialog;
+import org.jlab.icalibrate.swing.generated.dialog.CreateDatasetProgressDialog;
+import org.jlab.icalibrate.swing.generated.dialog.ChooseAndModifySetpointDialog;
+import org.jlab.icalibrate.swing.generated.dialog.ModifySampleDataDialog;
 import org.jlab.icalibrate.swing.table.model.DoseRateTableModel;
 import org.jlab.icalibrate.swing.table.model.SetpointTableModel;
 import org.jlab.icalibrate.swing.table.model.SetpointTableModel.SetpointRow;
@@ -61,12 +62,12 @@ import org.jlab.icalibrate.swing.table.renderer.UnselectableDoseRateCellRenderer
 import org.jlab.icalibrate.swing.util.DoseRateChartPanel;
 import org.jlab.icalibrate.swing.table.renderer.MeasuredCurrentCellRenderer;
 import org.jlab.icalibrate.swing.table.renderer.UnselectableCellRenderer;
-import org.jlab.icalibrate.wizard.Wizard;
-import org.jlab.icalibrate.wizard.WizardPage;
-import org.jlab.icalibrate.wizard.page.HallAndOptionsPage;
-import org.jlab.icalibrate.wizard.page.IonChamberPage;
-import org.jlab.icalibrate.wizard.page.LaserTargetBeamPage;
-import org.jlab.icalibrate.wizard.page.ReviewPage;
+import org.jlab.icalibrate.swing.generated.wizard.Wizard;
+import org.jlab.icalibrate.swing.generated.wizard.WizardPage;
+import org.jlab.icalibrate.swing.generated.wizard.page.HallAndOptionsPage;
+import org.jlab.icalibrate.swing.generated.wizard.page.IonChamberPage;
+import org.jlab.icalibrate.swing.generated.wizard.page.LaserTargetBeamPage;
+import org.jlab.icalibrate.swing.generated.wizard.page.ReviewPage;
 
 /**
  * The main iCalibrate main GUI window, which allows users to control the

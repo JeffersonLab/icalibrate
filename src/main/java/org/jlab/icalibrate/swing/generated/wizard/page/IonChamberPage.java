@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.wizard.page;
+package org.jlab.icalibrate.swing.generated.wizard.page;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,8 +12,8 @@ import org.jlab.icalibrate.swing.table.model.IonChamberTableModel;
 import org.jlab.icalibrate.swing.table.model.IonChamberTableModel.IonChamberRow;
 import org.jlab.icalibrate.swing.table.renderer.UnselectableCellRenderer;
 import org.jlab.icalibrate.swing.worker.IonChamberLookupWorker;
-import org.jlab.icalibrate.wizard.Wizard;
-import org.jlab.icalibrate.wizard.WizardPage;
+import org.jlab.icalibrate.swing.generated.wizard.Wizard;
+import org.jlab.icalibrate.swing.generated.wizard.WizardPage;
 
 /**
  * Prompts the operator to confirm the ion chambers.

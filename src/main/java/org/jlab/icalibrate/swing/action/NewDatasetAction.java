@@ -6,8 +6,8 @@ import java.beans.PropertyChangeListener;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import org.jlab.icalibrate.model.CreateNewDatasetParameters;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
-import org.jlab.icalibrate.swing.dialog.CreateDatasetProgressDialog;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.dialog.CreateDatasetProgressDialog;
 import org.jlab.icalibrate.swing.worker.CreateNewDatasetWorker;
 
 /**

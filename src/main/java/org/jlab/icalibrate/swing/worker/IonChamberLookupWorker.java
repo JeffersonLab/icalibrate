@@ -9,8 +9,8 @@ import org.jlab.icalibrate.exception.AppException;
 import org.jlab.icalibrate.model.Hall;
 import org.jlab.icalibrate.model.CreateNewDatasetParameters;
 import org.jlab.icalibrate.model.IonChamber;
-import org.jlab.icalibrate.wizard.Wizard;
-import org.jlab.icalibrate.wizard.page.IonChamberPage;
+import org.jlab.icalibrate.swing.generated.wizard.Wizard;
+import org.jlab.icalibrate.swing.generated.wizard.page.IonChamberPage;
 
 /**
  * This is a SwingWorker which looks up the ion chambers for the selected hall.

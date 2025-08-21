@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.swing.dialog;
+package org.jlab.icalibrate.swing.generated.dialog;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -11,7 +11,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.TableColumnModel;
 import org.jlab.icalibrate.model.DoseRateMeasurement;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
 import org.jlab.icalibrate.swing.action.listener.SaveDataModificationsActionListener;
 import org.jlab.icalibrate.swing.table.editor.CurrentCellEditor;
 import org.jlab.icalibrate.swing.table.editor.DoseRateCellEditor;

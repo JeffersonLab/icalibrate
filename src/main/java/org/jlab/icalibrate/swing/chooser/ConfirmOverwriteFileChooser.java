@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.swing.dialog.chooser;
+package org.jlab.icalibrate.swing.chooser;
 
 import java.awt.Component;
 import java.awt.Container;

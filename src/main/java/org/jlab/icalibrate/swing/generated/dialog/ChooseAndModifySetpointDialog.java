@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.swing.dialog;
+package org.jlab.icalibrate.swing.generated.dialog;
 
 import java.awt.Component;
 import java.awt.Dimension;
@@ -18,7 +18,7 @@ import javax.swing.table.TableColumnModel;
 import javax.swing.text.NumberFormatter;
 import org.jlab.icalibrate.model.DoseRateTripSetpoint;
 import org.jlab.icalibrate.model.IonChamber;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
 import org.jlab.icalibrate.swing.table.model.ModifySetpointTableModel;
 import org.jlab.icalibrate.swing.table.model.SetpointTableModel;
 import org.jlab.icalibrate.swing.table.renderer.EditableDoseRateCellRenderer;

@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.jlab.icalibrate.file.io.SnapFileWriter;
 import org.jlab.icalibrate.model.DoseRateTripSetpoint;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
-import org.jlab.icalibrate.swing.dialog.chooser.ConfirmOverwriteFileChooser;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
+import org.jlab.icalibrate.swing.chooser.ConfirmOverwriteFileChooser;
 import org.jlab.icalibrate.swing.worker.MinimumExecutionSwingWorker;
 
 /**

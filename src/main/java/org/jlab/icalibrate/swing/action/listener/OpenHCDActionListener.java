@@ -13,7 +13,7 @@ import org.jlab.icalibrate.ICalibrateApp;
 import org.jlab.icalibrate.exception.MissingDataException;
 import org.jlab.icalibrate.file.io.DatasetFileReader;
 import org.jlab.icalibrate.model.HallCalibrationDataset;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
 import org.jlab.icalibrate.swing.worker.MinimumExecutionSwingWorker;
 
 /**

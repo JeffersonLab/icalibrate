@@ -1,4 +1,4 @@
-package org.jlab.icalibrate.swing;
+package org.jlab.icalibrate.swing.generated;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

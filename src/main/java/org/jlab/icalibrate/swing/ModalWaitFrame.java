@@ -2,7 +2,7 @@ package org.jlab.icalibrate.swing;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
-import org.jlab.icalibrate.swing.dialog.WaitDialog;
+import org.jlab.icalibrate.swing.generated.dialog.WaitDialog;
 import org.jlab.icalibrate.swing.util.FrostedGlassPane;
 
 /**

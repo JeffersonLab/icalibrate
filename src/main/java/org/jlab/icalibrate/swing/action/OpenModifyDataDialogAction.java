@@ -3,8 +3,8 @@ package org.jlab.icalibrate.swing.action;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import org.jlab.icalibrate.model.ChartDataset;
-import org.jlab.icalibrate.swing.ICalibrateFrame;
-import org.jlab.icalibrate.swing.dialog.ModifySampleDataDialog;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
+import org.jlab.icalibrate.swing.generated.dialog.ModifySampleDataDialog;
 import org.jlab.icalibrate.swing.util.DoseRateChartPanel;
 
 /**
