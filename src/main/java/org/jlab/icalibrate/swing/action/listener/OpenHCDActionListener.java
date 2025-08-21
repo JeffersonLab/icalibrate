@@ -17,82 +17,81 @@ import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
 import org.jlab.icalibrate.swing.worker.MinimumExecutionSwingWorker;
 
 /**
- *  Handle an open Hall Calibration Data file request.
- * 
+ * Handle an open Hall Calibration Data file request.
+ *
  * @author ryans
  */
 public final class OpenHCDActionListener implements ActionListener {
 
-    private static final Logger LOGGER = Logger.getLogger(OpenHCDActionListener.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(OpenHCDActionListener.class.getName());
 
-    private final ICalibrateFrame frame;
+  private final ICalibrateFrame frame;
 
-    /**
-     * Create a new OpenHCDActionListener.
-     *
-     * @param frame The ICalibrateFrame
-     */
-    public OpenHCDActionListener(ICalibrateFrame frame) {
-        this.frame = frame;
+  /**
+   * Create a new OpenHCDActionListener.
+   *
+   * @param frame The ICalibrateFrame
+   */
+  public OpenHCDActionListener(ICalibrateFrame frame) {
+    this.frame = frame;
+  }
+
+  @Override
+  public void actionPerformed(ActionEvent e) {
+
+    String dir = ICalibrateApp.APP_PROPERTIES.getProperty("DEFAULT_HCD_FILE_DIR");
+
+    JFileChooser openDatasetFileChooser = new JFileChooser();
+
+    openDatasetFileChooser.setDialogTitle("Choose Hall Calibration Dataset File");
+    openDatasetFileChooser.setFileFilter(
+        new FileNameExtensionFilter("Hall Calibration Dataset (*.hcd)", "hcd"));
+
+    if (dir != null) {
+      openDatasetFileChooser.setCurrentDirectory(new File(dir));
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    int returnVal = openDatasetFileChooser.showOpenDialog(frame);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
 
-        String dir = ICalibrateApp.APP_PROPERTIES.getProperty("DEFAULT_HCD_FILE_DIR");
+      frame.closeHallCalibrationDataset();
 
-        JFileChooser openDatasetFileChooser = new JFileChooser();
+      File file = openDatasetFileChooser.getSelectedFile();
 
-        openDatasetFileChooser.setDialogTitle("Choose Hall Calibration Dataset File");
-        openDatasetFileChooser.setFileFilter(new FileNameExtensionFilter(
-                "Hall Calibration Dataset (*.hcd)", "hcd"));
+      frame.queueShowModalWait();
+      new MinimumExecutionSwingWorker<HallCalibrationDataset, Void>() {
 
-        if (dir != null) {
-            openDatasetFileChooser.setCurrentDirectory(new File(dir));
+        @Override
+        protected HallCalibrationDataset doWithMinimumExecution() throws Exception {
+          DatasetFileReader reader = new DatasetFileReader();
+          HallCalibrationDataset ds = reader.read(file);
+
+          return ds;
         }
 
-        int returnVal = openDatasetFileChooser.showOpenDialog(frame);
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            
-            frame.closeHallCalibrationDataset();
-            
-            File file = openDatasetFileChooser.getSelectedFile();
+        @Override
+        protected void done() {
+          try {
+            HallCalibrationDataset ds = get(); // See if there were any exceptions
+            frame.setDataset(ds, file.getName(), true);
+          } catch (InterruptedException | ExecutionException ex) {
+            String title = "Unable to open file";
+            String message = "Unexpected error";
+            LOGGER.log(Level.SEVERE, title, ex);
 
-            frame.queueShowModalWait();
-            new MinimumExecutionSwingWorker<HallCalibrationDataset, Void>() {
+            Throwable cause = ex.getCause();
+            if (cause != null && cause instanceof MissingDataException) {
+              message =
+                  "Current Ion Chamber configuration (names) do not match data file: "
+                      + ex.getMessage();
+            }
 
-                @Override
-                protected HallCalibrationDataset doWithMinimumExecution() throws Exception {
-                    DatasetFileReader reader = new DatasetFileReader();
-                    HallCalibrationDataset ds = reader.read(file);
-
-                    return ds;
-                }
-
-                @Override
-                protected void done() {
-                    try {
-                        HallCalibrationDataset ds = get(); // See if there were any exceptions
-                        frame.setDataset(ds, file.getName(), true);
-                    } catch (InterruptedException | ExecutionException ex) {
-                        String title = "Unable to open file";
-                        String message = "Unexpected error";
-                        LOGGER.log(Level.SEVERE, title, ex);
-
-                        Throwable cause = ex.getCause();
-                        if (cause != null && cause instanceof MissingDataException) {
-                            message
-                                    = "Current Ion Chamber configuration (names) do not match data file: "
-                                    + ex.getMessage();
-                        }
-
-                        JOptionPane.showMessageDialog(frame, message, title,
-                                JOptionPane.ERROR_MESSAGE);
-                    } finally {
-                        frame.hideModalWait();
-                    }
-                }
-            }.execute();
+            JOptionPane.showMessageDialog(frame, message, title, JOptionPane.ERROR_MESSAGE);
+          } finally {
+            frame.hideModalWait();
+          }
         }
+      }.execute();
     }
+  }
 }

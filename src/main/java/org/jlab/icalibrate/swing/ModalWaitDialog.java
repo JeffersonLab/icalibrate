@@ -3,7 +3,6 @@ package org.jlab.icalibrate.swing;
 import java.awt.EventQueue;
 import java.awt.Frame;
 import javax.swing.JDialog;
-
 import org.jlab.icalibrate.swing.generated.dialog.WaitDialog;
 import org.jlab.icalibrate.swing.util.FrostedGlassPane;
 
@@ -15,52 +14,45 @@ import org.jlab.icalibrate.swing.util.FrostedGlassPane;
  */
 public class ModalWaitDialog extends JDialog {
 
-    /**
-     * The frosted pane.
-     */
-    private final FrostedGlassPane frostedPane = new FrostedGlassPane();
+  /** The frosted pane. */
+  private final FrostedGlassPane frostedPane = new FrostedGlassPane();
 
-    /**
-     * The wait dialog.
-     */
-    private final WaitDialog waitDialog = new WaitDialog(this);
+  /** The wait dialog. */
+  private final WaitDialog waitDialog = new WaitDialog(this);
 
-    {
-        setGlassPane(frostedPane);
-    }
+  {
+    setGlassPane(frostedPane);
+  }
 
-    /**
-     * Create a new ModalWaitDialog.
-     *
-     * @param owner The owner Frame
-     * @param modal true if modal
-     */
-    public ModalWaitDialog(Frame owner, boolean modal) {
-        super(owner, modal);
-    }
+  /**
+   * Create a new ModalWaitDialog.
+   *
+   * @param owner The owner Frame
+   * @param modal true if modal
+   */
+  public ModalWaitDialog(Frame owner, boolean modal) {
+    super(owner, modal);
+  }
 
-    /**
-     * Show the wait dialog at the earliest opportunity.
-     */
-    public void queueShowModalWait() {
-        frostedPane.setVisible(true);
+  /** Show the wait dialog at the earliest opportunity. */
+  public void queueShowModalWait() {
+    frostedPane.setVisible(true);
 
-        EventQueue.invokeLater(new Runnable() {
+    EventQueue.invokeLater(
+        new Runnable() {
 
-            @Override
-            public void run() {
-                waitDialog.pack();
-                waitDialog.setLocationRelativeTo(ModalWaitDialog.this);
-                waitDialog.setVisible(true);
-            }
+          @Override
+          public void run() {
+            waitDialog.pack();
+            waitDialog.setLocationRelativeTo(ModalWaitDialog.this);
+            waitDialog.setVisible(true);
+          }
         });
-    }
+  }
 
-    /**
-     * Hide the wait dialog.
-     */
-    public void hideModalWait() {
-        waitDialog.setVisible(false);
-        frostedPane.setVisible(false);
-    }
+  /** Hide the wait dialog. */
+  public void hideModalWait() {
+    waitDialog.setVisible(false);
+    frostedPane.setVisible(false);
+  }
 }

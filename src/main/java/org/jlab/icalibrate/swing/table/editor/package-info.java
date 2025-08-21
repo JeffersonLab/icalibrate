@@ -1,4 +1,2 @@
-/**
- * Provides the CellEditor classes.
- */
+/** Provides the CellEditor classes. */
 package org.jlab.icalibrate.swing.table.editor;

@@ -14,44 +14,41 @@ import org.jlab.icalibrate.swing.util.DoseRateChartPanel;
  */
 public class OpenModifyDataDialogAction extends AbstractAction {
 
-    /**
-     * The chart panel.
-     */
-    private final DoseRateChartPanel chartPanel;
+  /** The chart panel. */
+  private final DoseRateChartPanel chartPanel;
 
-    /**
-     * The dose rate dialog.
-     */
-    private final ModifySampleDataDialog modifyDoseRateDialog;
+  /** The dose rate dialog. */
+  private final ModifySampleDataDialog modifyDoseRateDialog;
 
-    /**
-     * The frame.
-     */
-    private final ICalibrateFrame frame;
+  /** The frame. */
+  private final ICalibrateFrame frame;
 
-    /**
-     * Create a new OpenModifyDataDialogAction.
-     *
-     * @param chartPanel The chart panel
-     * @param modifyDoseRateDialog The modify dose rate dialog
-     * @param frame The main application frame
-     */
-    public OpenModifyDataDialogAction(DoseRateChartPanel chartPanel, ModifySampleDataDialog modifyDoseRateDialog, ICalibrateFrame frame) {
-        this.chartPanel = chartPanel;
-        this.modifyDoseRateDialog = modifyDoseRateDialog;
-        this.frame = frame;
-        
-        putValue(AbstractAction.NAME, "Modify Data");
-    }
+  /**
+   * Create a new OpenModifyDataDialogAction.
+   *
+   * @param chartPanel The chart panel
+   * @param modifyDoseRateDialog The modify dose rate dialog
+   * @param frame The main application frame
+   */
+  public OpenModifyDataDialogAction(
+      DoseRateChartPanel chartPanel,
+      ModifySampleDataDialog modifyDoseRateDialog,
+      ICalibrateFrame frame) {
+    this.chartPanel = chartPanel;
+    this.modifyDoseRateDialog = modifyDoseRateDialog;
+    this.frame = frame;
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        ChartDataset selected = chartPanel.getDataset();
-        modifyDoseRateDialog.setTitle("Modify Data: " + selected.getMeasuredDataset().getIonChamber().getFullName());
-        modifyDoseRateDialog.setData(selected.getMeasuredDataset().getMeasurementList());
-        modifyDoseRateDialog.pack();
-        modifyDoseRateDialog.setLocationRelativeTo(frame);
-        modifyDoseRateDialog.setVisible(true);
-    }
+    putValue(AbstractAction.NAME, "Modify Data");
+  }
 
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    ChartDataset selected = chartPanel.getDataset();
+    modifyDoseRateDialog.setTitle(
+        "Modify Data: " + selected.getMeasuredDataset().getIonChamber().getFullName());
+    modifyDoseRateDialog.setData(selected.getMeasuredDataset().getMeasurementList());
+    modifyDoseRateDialog.pack();
+    modifyDoseRateDialog.setLocationRelativeTo(frame);
+    modifyDoseRateDialog.setVisible(true);
+  }
 }

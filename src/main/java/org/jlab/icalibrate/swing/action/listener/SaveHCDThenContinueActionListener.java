@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.jlab.icalibrate.ICalibrateApp;
 import org.jlab.icalibrate.file.io.DatasetFileWriter;
-import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
 import org.jlab.icalibrate.swing.chooser.ConfirmOverwriteFileChooser;
+import org.jlab.icalibrate.swing.generated.ICalibrateFrame;
 
 /**
  * Handle an action request that first requires saving a Hall Calibration Data file before
@@ -22,71 +22,69 @@ import org.jlab.icalibrate.swing.chooser.ConfirmOverwriteFileChooser;
  */
 public final class SaveHCDThenContinueActionListener implements ActionListener {
 
-    private static final Logger LOGGER = Logger.getLogger(
-            SaveHCDThenContinueActionListener.class.getName());
+  private static final Logger LOGGER =
+      Logger.getLogger(SaveHCDThenContinueActionListener.class.getName());
 
-    private final ICalibrateFrame frame;
-    private final ActionListener continueAction;
+  private final ICalibrateFrame frame;
+  private final ActionListener continueAction;
 
-    /**
-     * Create a new SaveHCDThenContinueActionListener.
-     *
-     * @param frame The parent frame of the wait dialog
-     * @param continueAction The continue action, or null if none
-     */
-    public SaveHCDThenContinueActionListener(ICalibrateFrame frame, ActionListener continueAction) {
-        this.frame = frame;
-        this.continueAction = continueAction;
+  /**
+   * Create a new SaveHCDThenContinueActionListener.
+   *
+   * @param frame The parent frame of the wait dialog
+   * @param continueAction The continue action, or null if none
+   */
+  public SaveHCDThenContinueActionListener(ICalibrateFrame frame, ActionListener continueAction) {
+    this.frame = frame;
+    this.continueAction = continueAction;
+  }
+
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    boolean cancelled = false;
+
+    String fn = frame.getFilename();
+    String dir = ICalibrateApp.APP_PROPERTIES.getProperty("DEFAULT_HCD_FILE_DIR");
+
+    if (dir != null) {
+      fn = dir + File.separator + fn;
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        boolean cancelled = false;
+    ConfirmOverwriteFileChooser saveDatasetFileChooser = new ConfirmOverwriteFileChooser();
 
-        String fn = frame.getFilename();
-        String dir = ICalibrateApp.APP_PROPERTIES.getProperty("DEFAULT_HCD_FILE_DIR");
+    saveDatasetFileChooser.setDialogTitle("Choose Hall Calibration Dataset File");
+    saveDatasetFileChooser.setSelectedFile(new File("icalibrate.hcd"));
+    saveDatasetFileChooser.setFileFilter(
+        new FileNameExtensionFilter("Hall Calibration Dataset (*.hcd)", "hcd"));
 
-        if (dir != null) {
-            fn = dir + File.separator + fn;
-        }
+    saveDatasetFileChooser.setSelectedFile(new File(fn));
+    int returnVal = saveDatasetFileChooser.showSaveDialog(frame);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+      File file = saveDatasetFileChooser.getSelectedFile();
+      try {
+        DatasetFileWriter writer = new DatasetFileWriter();
 
-        ConfirmOverwriteFileChooser saveDatasetFileChooser
-                = new ConfirmOverwriteFileChooser();
+        writer.write(file, frame.getDataset());
 
-        saveDatasetFileChooser.setDialogTitle("Choose Hall Calibration Dataset File");
-        saveDatasetFileChooser.setSelectedFile(new File("icalibrate.hcd"));
-        saveDatasetFileChooser.setFileFilter(new FileNameExtensionFilter(
-                "Hall Calibration Dataset (*.hcd)",
-                "hcd"));
-
-        saveDatasetFileChooser.setSelectedFile(new File(fn));
-        int returnVal = saveDatasetFileChooser.showSaveDialog(frame);
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            File file = saveDatasetFileChooser.getSelectedFile();
-            try {
-                DatasetFileWriter writer = new DatasetFileWriter();
-
-                writer.write(file, frame.getDataset());
-
-                frame.setTitle(file.getName() + " - iCalibrate");
-                frame.setStateSaved(true);
-                doContinueAction();
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(frame, ex.getMessage(), "Unable to save file",
-                        JOptionPane.ERROR_MESSAGE);
-                System.err.println("Problem accessing file: " + file.getAbsolutePath());
-                ex.printStackTrace();
-            }
-        } else {
-            //System.out.println("File access cancelled by user.");
-            cancelled = true;
-        }
+        frame.setTitle(file.getName() + " - iCalibrate");
+        frame.setStateSaved(true);
+        doContinueAction();
+      } catch (Exception ex) {
+        JOptionPane.showMessageDialog(
+            frame, ex.getMessage(), "Unable to save file", JOptionPane.ERROR_MESSAGE);
+        System.err.println("Problem accessing file: " + file.getAbsolutePath());
+        ex.printStackTrace();
+      }
+    } else {
+      // System.out.println("File access cancelled by user.");
+      cancelled = true;
     }
+  }
 
-    private void doContinueAction() {
-        if (continueAction != null) {
-            continueAction.actionPerformed(new ActionEvent(this, ActionEvent.ACTION_PERFORMED,
-                    "Continue"));
-        }
+  private void doContinueAction() {
+    if (continueAction != null) {
+      continueAction.actionPerformed(
+          new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "Continue"));
     }
+  }
 }

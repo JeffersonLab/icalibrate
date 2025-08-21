@@ -2,20 +2,14 @@ package org.jlab.icalibrate.model;
 
 /**
  * Models the finite set of halls at JLab which are eligible for ion chamber calibration.
- * 
+ *
  * @author ryans
  */
 public enum Hall {
-    /**
-     * Hall A
-     **/
-    A,
-    /**
-     * Hall C
-     */
-    C,
-    /**
-     * Hall D
-     */
-    D
+  /** Hall A */
+  A,
+  /** Hall C */
+  C,
+  /** Hall D */
+  D
 }

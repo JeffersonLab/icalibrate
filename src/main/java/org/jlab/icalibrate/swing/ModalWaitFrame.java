@@ -8,51 +8,41 @@ import org.jlab.icalibrate.swing.util.FrostedGlassPane;
 /**
  * A JFrame which supports showing a "Please wait" message with a spinning icon during long running
  * operations in which the user should not be allowed to do anything but wait.
- * 
+ *
  * @author ryans
  */
 public class ModalWaitFrame extends JFrame {
 
-    /**
-     * The frosted pane.
-     */
-    private final FrostedGlassPane frostedPane = new FrostedGlassPane();
+  /** The frosted pane. */
+  private final FrostedGlassPane frostedPane = new FrostedGlassPane();
 
-    /**
-     * The wait dialog.
-     */
-    private final WaitDialog waitDialog = new WaitDialog(this);
+  /** The wait dialog. */
+  private final WaitDialog waitDialog = new WaitDialog(this);
 
-    /**
-     * Create a new ModalWaitFrame.
-     */
-    public ModalWaitFrame()
-    {
-        setGlassPane(frostedPane);    
-    }
-    
-    /**
-     * Show the wait dialog at the earliest opportunity.
-     */
-    public void queueShowModalWait() {
-        frostedPane.setVisible(true);
+  /** Create a new ModalWaitFrame. */
+  public ModalWaitFrame() {
+    setGlassPane(frostedPane);
+  }
 
-        EventQueue.invokeLater(new Runnable() {
+  /** Show the wait dialog at the earliest opportunity. */
+  public void queueShowModalWait() {
+    frostedPane.setVisible(true);
 
-            @Override
-            public void run() {
-                waitDialog.pack();
-                waitDialog.setLocationRelativeTo(ModalWaitFrame.this);
-                waitDialog.setVisible(true);
-            }
+    EventQueue.invokeLater(
+        new Runnable() {
+
+          @Override
+          public void run() {
+            waitDialog.pack();
+            waitDialog.setLocationRelativeTo(ModalWaitFrame.this);
+            waitDialog.setVisible(true);
+          }
         });
-    }
+  }
 
-    /**
-     * Hide the wait dialog.
-     */
-    public void hideModalWait() {
-        waitDialog.setVisible(false);
-        frostedPane.setVisible(false);
-    }    
+  /** Hide the wait dialog. */
+  public void hideModalWait() {
+    waitDialog.setVisible(false);
+    frostedPane.setVisible(false);
+  }
 }

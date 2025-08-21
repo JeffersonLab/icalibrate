@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'distribution'
+    id 'com.diffplug.spotless' version '7.2.1'
 }
 
 description = "Ion chamber calibration application"
@@ -80,4 +81,10 @@ tasks.register('testRun', JavaExec) {
     systemProperties = [
             'java.util.logging.config.file': 'config/debug-logging.properties'
     ]
+}
+spotless {
+    java {
+        targetExclude("**/generated/**/*.java")
+        googleJavaFormat()
+    }
 }

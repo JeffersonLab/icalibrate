@@ -1,4 +1,2 @@
-/**
- * Provides the iCalibrate Swing chooser dialog classes.
- */
+/** Provides the iCalibrate Swing chooser dialog classes. */
 package org.jlab.icalibrate.swing.chooser;

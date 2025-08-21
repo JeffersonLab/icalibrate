@@ -1,4 +1,2 @@
-/**
- * Provides the slider related classes.
- */
+/** Provides the slider related classes. */
 package org.jlab.icalibrate.swing.rangeslider;

@@ -1,9 +1,10 @@
 package org.jlab.icalibrate;
 
-import org.junit.Test;
 import static org.junit.Assert.*;
 
+import org.junit.Test;
+
 public class AppTest {
-    @Test public void testOne() {
-    }
+  @Test
+  public void testOne() {}
 }

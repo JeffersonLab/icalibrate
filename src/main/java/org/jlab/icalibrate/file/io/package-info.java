@@ -1,4 +1,2 @@
-/**
- * Provides the file IO classes.
- */
+/** Provides the file IO classes. */
 package org.jlab.icalibrate.file.io;

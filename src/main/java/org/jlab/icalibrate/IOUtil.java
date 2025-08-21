@@ -9,78 +9,78 @@ import java.net.URL;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-/**
- * Utility classes for IO.
- */
+/** Utility classes for IO. */
 public class IOUtil {
 
-    private static final Logger LOGGER = Logger.getLogger(
-            IOUtil.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(IOUtil.class.getName());
 
-    private IOUtil() {
-        // Can't instantiate publicly
+  private IOUtil() {
+    // Can't instantiate publicly
+  }
+
+  /**
+   * Reads in an InputStream fully and returns the result as a String.
+   *
+   * @param is The InputStream
+   * @param encoding The character encoding of the String
+   * @return The String representation of the data
+   */
+  public static String streamToString(InputStream is, String encoding) {
+    String str = "";
+
+    Scanner scan = new Scanner(is, encoding).useDelimiter("\\A");
+
+    if (scan.hasNext()) {
+      str = scan.next();
     }
 
-    /**
-     * Reads in an InputStream fully and returns the result as a String.
-     *
-     * @param is The InputStream
-     * @param encoding The character encoding of the String
-     * @return The String representation of the data
-     */
-    public static String streamToString(InputStream is, String encoding) {
-        String str = "";
+    return str;
+  }
 
-        Scanner scan = new Scanner(is, encoding).useDelimiter("\\A");
+  /**
+   * Perform an HTTP GET request.
+   *
+   * @param urlStr The URL to connect to
+   * @param connectTimeout How long to wait to connect
+   * @param readTimeout How long to wait to transfer data
+   * @return The response as a String
+   * @throws MalformedURLException If the URL is malformed
+   * @throws ProtocolException If unable to communicate with the remote host
+   * @throws IOException If unable to perform the request
+   */
+  public static String doHttpGet(String urlStr, int connectTimeout, int readTimeout)
+      throws MalformedURLException, ProtocolException, IOException {
+    URL url;
+    HttpURLConnection con;
 
-        if (scan.hasNext()) {
-            str = scan.next();
-        }
+    url = new URL(urlStr);
+    con = (HttpURLConnection) url.openConnection();
+    con.setRequestMethod("GET");
 
-        return str;
+    con.setConnectTimeout(connectTimeout);
+    con.setReadTimeout(readTimeout);
+
+    return streamToString(con.getInputStream(), "UTF-8");
+  }
+
+  /**
+   * Escape XML characters. This method aids with preparing a string to be inserted safely into HTML
+   * for example.
+   *
+   * @param input The unescaped string
+   * @return The escaped string
+   */
+  public static String escapeXml(String input) {
+    String output = input;
+
+    if (input != null) {
+      output =
+          output.replace("&", "&#038;"); // Must do this one first as & within other replacements
+      output = output.replace("\"", "&#034;");
+      output = output.replace("'", "&#039;");
+      output = output.replace("<", "&#060;");
+      output = output.replace(">", "&#062;");
     }
-
-    /**
-     * Perform an HTTP GET request.
-     *
-     * @param urlStr The URL to connect to
-     * @param connectTimeout How long to wait to connect
-     * @param readTimeout How long to wait to transfer data
-     * @return The response as a String
-     * @throws MalformedURLException If the URL is malformed
-     * @throws ProtocolException If unable to communicate with the remote host
-     * @throws IOException If unable to perform the request
-     */
-    public static String doHttpGet(String urlStr, int connectTimeout, int readTimeout) throws MalformedURLException, ProtocolException, IOException {
-        URL url;
-        HttpURLConnection con;
-   
-        url = new URL(urlStr);
-        con = (HttpURLConnection) url.openConnection();
-        con.setRequestMethod("GET");
-        
-        con.setConnectTimeout(connectTimeout);
-        con.setReadTimeout(readTimeout);
-        
-        return streamToString(con.getInputStream(), "UTF-8");
-    }
-
-    /**
-     * Escape XML characters.  This method aids with preparing a string to be inserted safely into HTML for example.
-     *
-     * @param input The unescaped string
-     * @return The escaped string
-     */
-    public static String escapeXml(String input) {
-        String output = input;
-
-        if (input != null) {
-            output = output.replace("&", "&#038;"); // Must do this one first as & within other replacements
-            output = output.replace("\"", "&#034;");
-            output = output.replace("'", "&#039;");
-            output = output.replace("<", "&#060;");
-            output = output.replace(">", "&#062;");
-        }
-        return output;
-    }
+    return output;
+  }
 }
