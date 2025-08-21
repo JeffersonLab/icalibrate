@@ -6,6 +6,7 @@ Ion chamber calibration desktop application for Jefferson Lab.  This software is
 ---
  - [Overview](https://github.com/JeffersonLab/icalibrate#overview)
  - [Install](https://github.com/JeffersonLab/icalibrate#install)
+ - [API](https://github.com/JeffersonLab/icalibrate#api) 
  - [Configure](https://github.com/JeffersonLab/icalibrate#configure)
  - [Build](https://github.com/JeffersonLab/icalibrate#build)
  - [Develop](https://github.com/JeffersonLab/icalibrate#develop)
@@ -36,6 +37,9 @@ bin/icalibrate.bat
 ```
 
 **Note:** To enable debug logging, run with CA writes disabled, and logbook set to _TLOG_ use the __testRun__ Gradle task
+
+## API
+- [Javadocs](https://jeffersonlab.github.io/icalibrate/)
 
 ## Configure
 ```
