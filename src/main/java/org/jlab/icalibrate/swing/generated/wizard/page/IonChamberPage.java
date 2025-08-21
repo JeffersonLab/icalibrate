@@ -164,15 +164,15 @@ public class IonChamberPage extends WizardPage<CreateNewDatasetParameters> {
      * @param icList The list
      */
     public void setIonChambers(List<IonChamber> icList) {
-        // Sort alphabetically by friendly name, then EPICS name
-        Collections.sort(icList);
-
         // if we were nice we'd look at old list, if exists, and try to maintain include state if returning to page via back button
         LinkedHashSet<IonChamberRow> existingRows = tableModel.getRows();
 
         LinkedHashSet<IonChamberRow> rowSet = new LinkedHashSet<>();
 
         if (icList != null) {
+            // Sort alphabetically by friendly name, then EPICS name
+            Collections.sort(icList);
+
             for (IonChamber ic : icList) {
                 boolean included = true;
 
