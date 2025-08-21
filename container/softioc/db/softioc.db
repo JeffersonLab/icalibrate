@@ -111,20 +111,3 @@ record(ai, "IBCAD00CRCUR6") {
   field(SIOL, "0.000000000000000e+00")
   field(SMOO, "0.0000000e+00")
 }
-# /cs/op/iocs/iochla3/ioncham2V/db/ioncham2hla3.db
-# IIC1H00
-record(ai, "IIC1H00Pk") {
-  field(SCAN, "1 second")
-  field(INP, "#C10 S0x48 @")
-}
-record(ai, "IIC1H00MAx") {
-  field(SCAN, "1 second")
-  field(INP, "#C10 S0x3e @")
-}
-record(ao, "IIC1H00MAX") {
-  field(PINI, "YES")
-  field(DRVH, "65535")
-  field(OUT, "#C10 S0x3e @")
-}
-
-# IIC1H05,IIC1H04A,IIC1P03,IICD107,IICD107A

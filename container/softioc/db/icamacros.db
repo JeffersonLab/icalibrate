@@ -1,0 +1,14 @@
+# /cs/op/iocs/iochla3/ioncham2V/db/ioncham2hla3.db
+record(ai, "$(IC)Pk") {
+  field(SCAN, "1 second")
+  field(INP, "#C10 S0x48 @")
+}
+record(ai, "$(IC)MAx") {
+  field(SCAN, "1 second")
+  field(INP, "#C10 S0x3e @")
+}
+record(ao, "$(IC)MAX") {
+  field(PINI, "YES")
+  field(DRVH, "65535")
+  field(OUT, "#C10 S0x3e @")
+}
