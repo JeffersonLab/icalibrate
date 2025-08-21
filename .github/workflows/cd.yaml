@@ -7,7 +7,20 @@ on:
 
 jobs:
   release:
+    permissions:
+      contents: write
     uses: jeffersonlab/java-workflows/.github/workflows/gh-release.yaml@v2
     with:
       files: build/distributions/icalibrate*.zip
     secrets: inherit
+
+  docs_publish:
+    permissions:
+      pages: write
+      id-token: write
+      contents: write
+    needs:
+      - release
+    uses: jeffersonlab/java-workflows/.github/workflows/gh-pages-publish.yaml@v2
+    with:
+      semvertag: ${{ needs.release.outputs.semvertag }}
