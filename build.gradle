@@ -68,7 +68,8 @@ processResources {
     }
 }
 javadoc {
-    exclude 'org/jlab/icalibrate/swing/generated/**'
+    options.addStringOption('Xdoclint:none', '-quiet')
+    //exclude 'org/jlab/icalibrate/swing/generated/**'
     options.overview = "src/main/java/overview.html"
     options.source = 11
     options.with {
