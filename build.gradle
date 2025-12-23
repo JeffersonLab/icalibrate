@@ -84,7 +84,7 @@ tasks.register('testRun', JavaExec) {
     mainClass.set('org.jlab.icalibrate.ICalibrateApp')
     systemProperties = [
             "CAJ_STRIP_HOSTNAME": "CAJ_STRIP_HOSTNAME",
-            "sun.java2d.uiScale=1.0": 1.0
+            "sun.java2d.uiScale": 1.0
     ]
 
     //"sun.java2d.opengl": "True",
