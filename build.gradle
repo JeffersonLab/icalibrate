@@ -29,7 +29,8 @@ dependencies {
 }
 application {
     mainClass.set('org.jlab.icalibrate.ICalibrateApp')
-    applicationDefaultJvmArgs = ['-DCAJ_STRIP_HOSTNAME=CAJ_STRIP_HOSTNAME', '-Dsun.java2d.opengl=True', '-Dsun.java2d.d3d=true']
+    applicationDefaultJvmArgs = ['-DCAJ_STRIP_HOSTNAME=CAJ_STRIP_HOSTNAME', '-Dsun.java2d.uiScale=1.0']
+    // '-Dsun.java2d.opengl=True', '-Dsun.java2d.d3d=true'
 }
 startScripts {
     classpath += files('config')
@@ -82,9 +83,12 @@ tasks.register('testRun', JavaExec) {
     classpath += sourceSets.main.runtimeClasspath
     mainClass.set('org.jlab.icalibrate.ICalibrateApp')
     systemProperties = [
-            "sun.java2d.opengl": "True",
-            "sun.java2d.d3d": "true"
+            "CAJ_STRIP_HOSTNAME": "CAJ_STRIP_HOSTNAME",
+            "sun.java2d.uiScale=1.0": 1.0
     ]
+
+    //"sun.java2d.opengl": "True",
+    //"sun.java2d.d3d": "true"
 }
 spotless {
     java {
